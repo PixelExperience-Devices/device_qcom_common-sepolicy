@@ -307,6 +307,7 @@
 /data/vendor/tzstorage(/.*)?           u:object_r:vendor_data_tzstorage_file:s0
 /data/vendor/tombstones(/.*)?       u:object_r:vendor_tombstone_data_file:s0
 /data/vendor/time(/.*)?                u:object_r:vendor_time_data_file:s0
+/data/vendor/firmware(/.*)?                u:object_r:vendor_firmware_data_file:s0
 
 /data/vendor/mdmhelperdata(/.*)?       u:object_r:vendor_mdmhelperdata_data_file:s0
 /data/vendor/bluetooth(/.*)?           u:object_r:vendor_bt_data_file:s0
