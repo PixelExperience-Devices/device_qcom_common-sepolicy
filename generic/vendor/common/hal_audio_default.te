@@ -33,6 +33,8 @@ userdebug_or_eng(`
 hal_client_domain(hal_audio_default, vendor_hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
+binder_call(hal_audio_default, vendor_agmservice_qti)
+
 # read-only permission to obtain the calibration data
 r_dir_file(hal_audio_default, vendor_persist_audio_file);
 allow hal_audio_default mnt_vendor_file:dir search;
@@ -46,6 +48,9 @@ allow hal_audio vendor_proc_audiod:file r_file_perms;
 
 allow hal_audio_default vendor_audio_data_file:dir rw_dir_perms;
 allow hal_audio_default vendor_audio_data_file:file create_file_perms;
+
+#Allow qipcrtr socket permisison
+allow hal_audio_default self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 #Allow hal audio to use Binder IPC
 vndbinder_use(hal_audio)

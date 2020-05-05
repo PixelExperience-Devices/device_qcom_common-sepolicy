@@ -182,6 +182,9 @@ type vendor_hbtp_cfg_file, file_type, vendor_file_type;
 #tloc data files
 type vendor_tlocd_data_file, file_type, data_file_type;
 
+#audio graph manager sysfs file
+type vendor_sysfs_agm, fs_type, sysfs_type;
+
 #qseecom
 type vendor_data_qsee_file, file_type, data_file_type;
 
