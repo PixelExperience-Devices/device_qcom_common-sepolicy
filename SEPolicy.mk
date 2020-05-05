@@ -1,6 +1,35 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
+QSSI_SEPOLICY_PATH:= device/qcom/sepolicy_sys
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
+    $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
+    $(QSSI_SEPOLICY_PATH)/generic/public
+
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
+    $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
+    $(QSSI_SEPOLICY_PATH)/generic/private
+
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
+    $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
+    $(QSSI_SEPOLICY_PATH)/qva/public
+
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
+    $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
+    $(QSSI_SEPOLICY_PATH)/qva/private
+
+#once all the services are moved to Product /ODM above lines will be removed.
+# sepolicy rules for product images
+PRODUCT_PUBLIC_SEPOLICY_DIRS := \
+    $(PRODUCT_PUBLIC_SEPOLICY_DIRS) \
+    $(QSSI_SEPOLICY_PATH)/generic/product/public \
+    $(QSSI_SEPOLICY_PATH)/qva/product/public
+
+PRODUCT_PRIVATE_SEPOLICY_DIRS := \
+    $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
+    $(QSSI_SEPOLICY_PATH)/generic/product/private \
+    $(QSSI_SEPOLICY_PATH)/qva/product/private
+
 ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
