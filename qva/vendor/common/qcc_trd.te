@@ -69,8 +69,8 @@ allow vendor_qcc_trd sysfs_thermal:dir r_dir_perms;
 allow vendor_qcc_trd proc_stat:file r_file_perms;
 allow vendor_qcc_trd proc_stat:dir r_dir_perms;
 
-# cpustats /proc/<pid>/ - todo find alternative sln
-#r_dir_file(vendor_qcc_trd, domain);
+#access to taskstats interface for process stats
+allow vendor_qcc_trd self:netlink_generic_socket create_socket_perms_no_ioctl;
 
 # mps /persist/hlos_rfs/shared
 allow vendor_qcc_trd mnt_vendor_file:dir r_dir_perms;
