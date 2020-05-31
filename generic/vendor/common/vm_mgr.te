@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,34 +24,39 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# For setting up various WIGIG files
-allow ueventd vendor_sysfs_bond0:file rw_file_perms;
 
-allow ueventd vendor_sysfs_usb_c:file w_file_perms;
+#######################
+# Policy for vmmgr
+type vendor_vm_mgr, domain;
+type vendor_vm_mgr_exec, exec_type, vendor_file_type, file_type;
 
-allow ueventd {
-    { sysfs_type - usermodehelper }
-      vendor_sysfs_battery_supply
-      vendor_sysfs_data
-      vendor_sysfs_graphics
-      vendor_sysfs_kgsl
-      sysfs_leds
-      sysfs_net
-      vendor_sysfs_scsi_host
-      vendor_sysfs_usbpd_device
-      vendor_sysfs_usb_supply
-}:file w_file_perms;
 
-allow ueventd firmware_file:dir search;
-allow ueventd firmware_file:file r_file_perms;
-allow ueventd tmpfs:blk_file getattr;
-allow ueventd vendor_persist_file:dir search;
-allow ueventd vendor_persist_file:file r_file_perms;
-allow ueventd vendor_vm_system_file:dir search;
-allow ueventd vendor_vm_system_file:file r_file_perms;
+#######################
+# Main daemon flow
+init_daemon_domain(vendor_vm_mgr);
 
-# For wifi to access  mnt_vendor_file
-r_dir_file(ueventd, mnt_vendor_file)
+# Scan thru and read vm images
+allow vendor_vm_mgr vendor_vm_system_file:file r_file_perms;
+allow vendor_vm_mgr vendor_vm_system_file:dir search;
 
-# for VM firmware handler
-domain_auto_trans(ueventd, vendor_vm_mgr_exec, vendor_vm_mgr)
+# Execute toolbox to setup loopback block devices for VM's file system
+allow vendor_vm_mgr { vendor_shell_exec vendor_toolbox_exec }:file rx_file_perms;
+allow vendor_vm_mgr block_device:dir r_dir_perms;
+allow vendor_vm_mgr block_device:blk_file getattr;
+allow vendor_vm_mgr loop_control_device:chr_file rw_file_perms;
+allowxperm vendor_vm_mgr loop_control_device:chr_file ioctl { LOOP_CTL_GET_FREE };
+allow vendor_vm_mgr loop_device:blk_file rw_file_perms;
+allowxperm vendor_vm_mgr loop_device:blk_file ioctl { LOOP_GET_STATUS64 LOOP_SET_FD LOOP_SET_STATUS64 LOOP_CLR_FD };
+# losetup used by vm-mgr scans for every block devices looking for loopbacks
+# so ignore all denials during this scan
+dontaudit vendor_vm_mgr dev_type:blk_file getattr;
+allow vendor_vm_mgr vendor_ssr_device:chr_file r_file_perms;
+
+# Set neuron mapping block device
+allow vendor_vm_mgr vendor_sysfs_svm_neuron:file rw_file_perms;
+
+
+#######################
+# Uevent firmware helper flow
+allow vendor_vm_mgr ueventd:fd use;
+allow vendor_vm_mgr ueventd:unix_stream_socket { read write getattr};
