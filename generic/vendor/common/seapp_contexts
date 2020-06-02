@@ -50,3 +50,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.devicestatisticsservice domain=v
 
 #Add new domain for trustzone access app
 user=_app seinfo=platform name=com.qualcomm.qti.qms.service.trustzoneaccess domain=vendor_tzas_app type=app_data_file levelfrom=all
+
+#allow embms msdc app to access embmssl hal
+user=_app seinfo=platform name=com.qti.ltebc domain=vendor_embmssl_app type=app_data_file levelFrom=all
