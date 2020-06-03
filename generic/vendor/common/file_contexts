@@ -234,6 +234,7 @@
 
 /vendor/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:vendor_hal_display_color_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.media\.c2@1\.0-service               u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.qti\.media\.c2audio@1\.0-service          u:object_r:mediacodec_exec:s0
 /vendor/bin/hw/hardware\.google\.media\.c2@1\.0-service-software u:object_r:mediacodec_exec:s0
 /vendor/bin/feature_enabler_client          u:object_r:vendor_feature_enabler_client_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:vendor_qdcm-ss_exec:s0
