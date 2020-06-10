@@ -140,6 +140,7 @@ type vendor_display_vendor_data_file, file_type, data_file_type;
 type vendor_nfc_vendor_data_file, file_type, data_file_type;
 type vendor_radio_vendor_data_file, file_type, data_file_type, mlstrustedobject;
 type vendor_ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
+type vendor_pddump_data_file, file_type, data_file_type;
 type vendor_modem_dump_file, file_type, data_file_type;
 type vendor_sensors_vendor_data_file, file_type, data_file_type;
 type vendor_port_bridge_data_file, file_type, data_file_type;
