@@ -25,9 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#face3d
-persist.vendor.biometricsface.pr u:object_r:vendor_face3d_producer_prop:s0
-
-#pasr property
-vendor.pasr.                                 u:object_r:vendor_pasr_prop:s0
-ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
+attribute vendor_hal_pasrmanager_memory;
+attribute vendor_hal_pasrmanager_memory_client;
+attribute vendor_hal_pasrmanager_memory_server;
