@@ -27,5 +27,3 @@
 
 #Add new domain for perfdump app
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdump_app type=system_app_data_file
-
-user=_app seinfo=platform name=com.qualcomm.qti.dualstaapp domain=vendor_dualsta_app type=app_data_file levelfrom=all
