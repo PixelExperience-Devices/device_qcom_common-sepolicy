@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_dataservice_app vendor_hal_slmadapter_hwservice:hwservice_manager find;
+
+get_prop(vendor_dataservice_app, vendor_slm_prop)
