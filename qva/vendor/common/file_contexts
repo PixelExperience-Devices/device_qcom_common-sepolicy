@@ -32,6 +32,7 @@
 /dev/sp_kernel                        u:object_r:vendor_skp_device:s0
 /dev/sp_nvm                           u:object_r:vendor_sp_nvm_device:s0
 /dev/sp_keymaster                     u:object_r:vendor_sp_keymaster_device:s0
+/dev/sp_keymaster_ssr                 u:object_r:vendor_sp_keymaster_ssr_device:s0
 /dev/sp_ssr                           u:object_r:vendor_sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:vendor_spdaemon_ssr_device:s0
 /dev/spss_utils                       u:object_r:vendor_spss_utils_device:s0
