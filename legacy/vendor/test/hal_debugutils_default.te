@@ -1,4 +1,4 @@
-# Copyright (c) 2018, 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,12 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-persist.vendor.debug.sensors.             u:object_r:sensors_dbg_prop:s0
 
-#Wifi Display
-persist.vendor.debug.mux.                    u:object_r:wfd_vendor_debug_prop:s0
-persist.vendor.debug.rtp.                    u:object_r:wfd_vendor_debug_prop:s0
-persist.vendor.debug.wfd.                    u:object_r:wfd_vendor_debug_prop:s0
+#Define Domain
+type vendor_hal_debugutils_default, domain;
+type vendor_hal_debugutils_default_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(vendor_hal_debugutils_default, vendor_hal_debugutils)
+init_daemon_domain(vendor_hal_debugutils_default)
 
-#debugutils HAL
-vendor.debug.breakpoint.continue  u:object_r:vendor_dbg_brkpoint_prop:s0
+permissive vendor_hal_debugutils_default;
+binder_call(vendor_hal_debugutils_server, vendor_hal_debugutils_client);
+binder_call(vendor_hal_debugutils_client, vendor_hal_debugutils_server);
+hal_attribute_hwservice(vendor_hal_debugutils,hal_debugutils_hwservice);
