@@ -92,6 +92,7 @@ allow vendor_hal_perf {
      vendor_sysfs_process_reclaim
      vendor_sysfs_qfprom
      vendor_sysfs_kgsl_proc
+     sysfs_dm
 }:file rw_file_perms;
 
 allow vendor_hal_perf {
