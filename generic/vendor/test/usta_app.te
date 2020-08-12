@@ -64,3 +64,9 @@ allow vendor_usta_app mnt_vendor_file:dir create_dir_perms;
 
 dontaudit vendor_usta_app system_data_file:file open;
 allow vendor_usta_app cgroup:file w_file_perms;
+
+dontaudit vendor_usta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit vendor_usta_app gpuservice:binder call;
+userdebug_or_eng(`
+  dontaudit vendor_usta_app vendor_diag-router:unix_stream_socket connectto;
+')
