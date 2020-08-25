@@ -182,3 +182,22 @@
 /sys/devices/platform/soc/4c90000.i2c/i2c-2/2-000c/4c90000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
 /sys/devices/platform/soc/4c90000.i2c/i2c-2/2-0034/4c90000.i2c:qcom,smb1396@34:qcom,div2_cp/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
 /sys/devices/platform/soc/4c90000.i2c/i2c-2/2-0035/990000.i2c:qcom,smb1396@35:qcom,div2_cp_slave/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+
+#SSR nodes
+/sys/devices/platform/soc/a400000.qcom,lpass/subsys[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/a400000.qcom,lpass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/b000000.qcom,turing/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/b000000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/6000000.qcom,mss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6000000.qcom,mss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
