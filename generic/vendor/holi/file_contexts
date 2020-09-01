@@ -205,3 +205,6 @@
 
 /sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+# Brightness
+/sys/devices/platform/soc/5e00000.qcom,mdss_mdp/backlight(/.*)?  u:object_r:vendor_sysfs_graphics:s0
