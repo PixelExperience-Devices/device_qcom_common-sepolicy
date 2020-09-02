@@ -154,3 +154,7 @@
 
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_poweroptservice_exec:s0
+
+# Feature configs
+/sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
+
