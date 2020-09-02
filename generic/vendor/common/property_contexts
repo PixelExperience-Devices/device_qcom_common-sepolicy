@@ -125,6 +125,9 @@ vendor.wlan.  u:object_r:vendor_wifi_prop:s0
 #qdcm socket service
 vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
+#keymaster strongbox service
+vendor.keymaster.strongbox.version u:object_r:vendor_km_strongbox_version_prop:s0
+
 #vendor-adsprpc
 vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
 
