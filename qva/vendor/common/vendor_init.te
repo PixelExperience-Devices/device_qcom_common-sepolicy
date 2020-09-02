@@ -56,3 +56,6 @@ set_prop(vendor_init, vendor_confqmaa)
 set_prop(vendor_init, vendor_disable_spu_prop)
 
 set_prop(vendor_init, vendor_persist_dpm_prop)
+
+# Allow vendor_init to set vendor_pasr_prop
+set_prop(vendor_init, vendor_pasr_prop)
