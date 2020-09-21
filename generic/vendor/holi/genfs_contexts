@@ -50,7 +50,7 @@ genfscon sysfs /bus/iio/devices u:object_r:vendor_sysfs_battery_supply:s0
 
 # PMIC UI peripherals
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-06/1c40000.qcom,spmi:qcom,pmk8350@6:rtc@6100/rtc/rtc0 u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-06/1c40000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0 u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-05/1c40000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/red u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-05/1c40000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/green u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-05/1c40000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/blue u:object_r:vendor_sysfs_graphics:s0
