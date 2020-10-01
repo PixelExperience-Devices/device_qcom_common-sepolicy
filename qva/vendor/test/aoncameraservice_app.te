@@ -1,5 +1,5 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
-#
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -12,7 +12,7 @@
 #     * Neither the name of The Linux Foundation nor the names of its
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
-#
+
 # THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -25,49 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This is needed to get priority for Camera process
-allow hal_camera self:capability sys_nice;
-
-# This is mandatory to open Camera Service
-hal_client_domain(hal_camera_default, hal_graphics_allocator)
-
-# This is needed to get performance boost
-hal_client_domain(hal_camera_default, vendor_hal_perf)
-
-set_prop(hal_camera, vendor_camera_prop)
-
-# ignore spurious denial
-dontaudit hal_camera graphics_device:dir search;
-
-allow hal_camera vendor_camera_data_file:dir create_dir_perms;
-allow hal_camera vendor_camera_data_file:file create_file_perms;
-unix_socket_connect(hal_camera, vendor_thermal, vendor_thermal-engine)
-
 userdebug_or_eng(`
-  allow hal_camera vendor_diag_device:chr_file rw_file_perms;
+type aoncameraservice_app, domain;
+permissive aoncameraservice_app;
+app_domain(aoncameraservice_app)
+diag_use(aoncameraservice_app)
+binder_call(aoncameraservice_app, hal_camera)
+allow aoncameraservice_app cameraserver_service:service_manager find;
+allow aoncameraservice_app { app_api_service activity_service }:service_manager find;
 ')
-
-# access hexagon
-allow hal_camera vendor_qdsp_device:chr_file r_file_perms;
-
-#Allow camera to access synx device
-allow hal_camera vendor_synx_device:chr_file rw_file_perms;
-
-#needed for full_treble
-hal_client_domain(hal_camera_default, hal_graphics_composer)
-
-r_dir_file(hal_camera_default, vendor_sysfs_graphics)
-
-#allow camera to access /dsp
-r_dir_file(hal_camera, adsprpcd_file);
-#allow camera to access adsprpc_prop
-get_prop(hal_camera, vendor_adsprpc_prop)
-
-# This is needed to access GPU
-allow hal_camera_default gpu_device:chr_file rw_file_perms;
-
-# Postproc Service
-hal_attribute_hwservice(hal_camera, vendor_hal_camera_postproc_hwservice);
-
-# AON Service
-hal_attribute_hwservice(hal_camera, vendor_hal_camera_aon_hwservice);
