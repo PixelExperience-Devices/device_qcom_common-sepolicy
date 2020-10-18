@@ -34,4 +34,7 @@ get_prop(appdomain, vendor_adsprpc_prop)
 # Allow all apps to open and send ioctl to npu device
 allow appdomain vendor_npu_device:chr_file r_file_perms;
 
+# Allow all apps to access /dev/dma_heap/qcom,system
+allow { appdomain -isolated_app } qcom_dmabuf_system_heap_device:chr_file r_file_perms;
+
 dontaudit appdomain vendor_hal_qspmhal_hwservice:hwservice_manager find;
