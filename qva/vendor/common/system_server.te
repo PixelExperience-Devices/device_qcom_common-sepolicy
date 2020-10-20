@@ -34,6 +34,8 @@ binder_call(system_server, vendor_hal_srvctracker_default)
 
 allow system_server vendor_proc_audiod:file r_file_perms;
 
+get_prop(system_server, vendor_confqmaa)
+
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, vendor_hal_iop)
 
