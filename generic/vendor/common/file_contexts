@@ -112,6 +112,17 @@
 # Block device for ZRAM
 /dev/block/zram0                                u:object_r:swap_block_device:s0
 
+/dev/dma_heap/qcom,system 	u:object_r:qcom_dmabuf_system_heap_device:s0
+
+/dev/dma_heap/qcom,adsp 		u:object_r:qcom_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,secure-spss 		u:object_r:qcom_dmabuf_secure_spss_heap_device:s0
+/dev/dma_heap/qcom,user-contig 		u:object_r:qcom_dmabuf_user_contig_heap_device:s0
+/dev/dma_heap/qcom,secure-qseecom	u:object_r:qcom_dmabuf_secure_qseecom_heap_device:s0
+/dev/dma_heap/qcom,secure-qseecom-ta	u:object_r:qcom_dmabuf_secure_qseecom_ta_heap_device:s0
+/dev/dma_heap/qcom,secure-display	u:object_r:qcom_dmabuf_secure_display_heap_device:s0
+/dev/dma_heap/qcom,display		u:object_r:qcom_dmabuf_display_heap_device:s0
+/dev/dma_heap/qcom,audio-ml 		u:object_r:qcom_dmabuf_audio_ml_heap_device:s0
+
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
 /vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
