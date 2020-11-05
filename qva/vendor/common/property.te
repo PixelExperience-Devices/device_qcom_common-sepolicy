@@ -32,6 +32,8 @@ vendor_public_prop(vendor_qcc_prop);
 vendor_internal_prop(vendor_mdm_helper_prop);
 vendor_internal_prop(vendor_disable_spu_prop);
 
+vendor_restricted_prop(vendor_confqmaa);
+
 # boot mode property
 vendor_internal_prop(vendor_boot_mode_prop);
 

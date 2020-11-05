@@ -51,6 +51,8 @@ userdebug_or_eng(`
   set_prop(vendor_init, vendor_audio_debug_prop)
 ')
 
+set_prop(vendor_init, vendor_confqmaa)
+
 set_prop(vendor_init, vendor_disable_spu_prop)
 
 set_prop(vendor_init, vendor_persist_dpm_prop)
