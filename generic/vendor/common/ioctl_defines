@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -37,3 +37,5 @@ define(`IPC_ROUTER_IOCTL_CONFIG_SEC_RULES', `0x0000c305')
 
 #mmc ioctls defined in the kernel in include/uapi/linux/mmc/ioctl.h
 define(`MMC_IOC_MULTI_CMD', `0xc008b301')
+#add DMA_HEA_ION_ALLOC ioctl
+define(`DMA_HEAP_IOCTL_ALLOC', `0x00004800')
