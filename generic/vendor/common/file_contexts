@@ -130,6 +130,22 @@
 /dev/dma_heap/qcom,display              u:object_r:vendor_dmabuf_display_heap_device:s0
 /dev/dma_heap/qcom,audio-ml             u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
 
+/dev/mem_buf_vm/qcom,trusted_vm			u:object_r:vendor_vm_primary_device:s0
+/dev/mem_buf_vm/qcom,primary_vm			u:object_r:vendor_vm_trusted_device:s0
+/dev/mem_buf_vm/qcom,hlos			u:object_r:vendor_vm_hlos_device:s0
+/dev/mem_buf_vm/qcom,cp_touch			u:object_r:vendor_vm_cp_touch_device:s0
+/dev/mem_buf_vm/qcom,cp_bitstream		u:object_r:vendor_vm_cp_bitstream_device:s0
+/dev/mem_buf_vm/qcom,cp_pixel			u:object_r:vendor_vm_cp_pixel_device:s0
+/dev/mem_buf_vm/qcom,cp_non_pixel		u:object_r:vendor_vm_cp_non_pixel_device:s0
+/dev/mem_buf_vm/qcom,cp_camera			u:object_r:vendor_vm_cp_camera_device:s0
+/dev/mem_buf_vm/qcom,cp_sec_display		u:object_r:vendor_vm_cp_sec_display_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_sp			u:object_r:vendor_vm_cp_spss_sp_device:s0
+/dev/mem_buf_vm/qcom,cp_camera_preview		u:object_r:vendor_vm_cp_camera_preview_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_sp_shared		u:object_r:vendor_vm_cp_spss_sp_shared_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_hlos_shared	u:object_r:vendor_vm_cp_spss_hlos_shared_device:s0
+/dev/mem_buf_vm/qcom,cp_cdsp			u:object_r:vendor_vm_cp_cdsp_device:s0
+
+
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
 /vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
