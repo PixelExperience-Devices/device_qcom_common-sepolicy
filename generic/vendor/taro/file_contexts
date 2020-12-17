@@ -199,26 +199,20 @@
 /sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/17300000.qcom,lpass/subsys[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/17300000.qcom,lpass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/98900000.qcom,turing/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/98900000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/3700000.qcom,lpass/subsys[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/3700000.qcom,lpass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/a300000.qcom,turing/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/a300000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/5c00000.qcom,ssc/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/5c00000.qcom,ssc/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/188101c.qcom,spss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/188101c.qcom,spss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
