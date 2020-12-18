@@ -115,6 +115,8 @@
 
 # Vendor DMA-BUF Heaps
 /dev/dma_heap/qcom,system               u:object_r:vendor_dmabuf_system_heap_device:s0
+/dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
+/dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
 /dev/dma_heap/qcom,secure-cdsp          u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,sp-hlos              u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
@@ -123,7 +125,6 @@
 /dev/dma_heap/qcom,user-contig          u:object_r:vendor_dmabuf_user_contig_heap_device:s0
 /dev/dma_heap/qcom,qseecom              u:object_r:vendor_dmabuf_qseecom_heap_device:s0
 /dev/dma_heap/qcom,qseecom-ta           u:object_r:vendor_dmabuf_qseecom_ta_heap_device:s0
-/dev/dma_heap/qcom,secure-display       u:object_r:vendor_dmabuf_secure_display_heap_device:s0
 /dev/dma_heap/qcom,display              u:object_r:vendor_dmabuf_display_heap_device:s0
 /dev/dma_heap/qcom,audio-ml             u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
 
