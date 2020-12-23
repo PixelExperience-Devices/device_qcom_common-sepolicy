@@ -2,6 +2,8 @@
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
 QSSI_SEPOLICY_PATH:= device/qcom/sepolicy
+BOARD_SYSTEM_EXT_PREBUILT_DIR := device/qcom/sepolicy/generic
+BOARD_PRODUCT_PREBUILT_DIR := device/qcom/sepolicy/generic/product
 SYS_ATTR_PROJECT_PATH := $(TOP)/device/qcom/sepolicy/generic/public/attribute
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
