@@ -130,3 +130,6 @@ ro.vendor.bt.enablelazyhal                   u:object_r:vendor_bluetooth_prop:s0
 
 #SLM
 persist.vendor.slm.                          u:object_r:vendor_slm_prop:s0
+
+#MWQEM
+persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0
