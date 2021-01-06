@@ -55,6 +55,8 @@
 /dev/wcd-dsp-glink                              u:object_r:audio_device:s0
 /dev/wcd_dsp0_control                           u:object_r:audio_device:s0
 /dev/wcd-spi-ac-client                          u:object_r:audio_device:s0
+/dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
+/dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0

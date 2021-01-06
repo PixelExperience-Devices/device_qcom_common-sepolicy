@@ -60,6 +60,9 @@ allow vendor_wifidisplayhalservice_qti tee_device:chr_file rw_file_perms;
 allow vendor_wifidisplayhalservice_qti audio_device:chr_file rw_file_perms;
 allow vendor_wifidisplayhalservice_qti audio_device:dir r_dir_perms;
 
+#Allow access for audio hal
+hal_client_domain(vendor_wifidisplayhalservice_qti, hal_audio)
+
 #Allow access to /dev/video/* devices for encoding/decoding
 allow vendor_wifidisplayhalservice_qti video_device:chr_file rw_file_perms;
 
