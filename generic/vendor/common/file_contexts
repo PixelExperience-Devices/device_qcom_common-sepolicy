@@ -498,6 +498,9 @@
 #Light AIDL HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.qti   u:object_r:hal_light_default_exec:s0
 
+# Qti Dumpstate HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.1-service\.qti   u:object_r:hal_dumpstate_default_exec:s0
+
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh              u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.sh               u:object_r:vendor_qti_init_shell_exec:s0
