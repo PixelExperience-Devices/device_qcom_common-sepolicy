@@ -62,6 +62,9 @@ wakelock_use(hal_audio)
 allow hal_audio vendor_sysfs_audio:file rw_file_perms;
 allow hal_audio vendor_sysfs_audio:dir r_dir_perms ;
 
+#allow access to snd_card sysfs
+allow hal_audio vendor_sysfs_sndcard:file rw_file_perms;
+
 # audio properties
 get_prop(hal_audio, vendor_audio_prop)
 
