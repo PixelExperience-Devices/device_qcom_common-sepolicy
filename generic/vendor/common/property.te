@@ -111,3 +111,6 @@ vendor_internal_prop(vendor_soc_name_prop);
 #kernel console log level
 vendor_internal_prop(vendor_console_log_level_prop)
 vendor_internal_prop(vendor_dcvs_prop)
+
+#pcie property
+vendor_internal_prop(vendor_pcie_prop)
