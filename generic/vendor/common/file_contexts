@@ -390,6 +390,7 @@
 /dev/dri/card0                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
+/dev/spec_sync                                  u:object_r:graphics_device:s0
 
 #TODO: move this to genfs_context or target based file_context
 # sysfs_leds
