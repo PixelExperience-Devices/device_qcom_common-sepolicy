@@ -117,14 +117,13 @@ genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/restart_
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/restart_level u:object_r:vendor_sysfs_ssr:s0
 
-
 #qdss sysfs-node
-genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/soc:hwevent/coresight-hwevent u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/6b0f000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/soc:dummy_source/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/1004f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/ec11000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/soc:modem_diag/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
