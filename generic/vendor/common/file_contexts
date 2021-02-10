@@ -130,6 +130,10 @@
 /dev/dma_heap/qcom,display              u:object_r:vendor_dmabuf_display_heap_device:s0
 /dev/dma_heap/qcom,audio-ml             u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
 
+# mem-buf device used for inter-VM memory transactions
+/dev/membuf                                     u:object_r:vendor_membuf_dev:s0
+
+# mem_buf_vm device end points to be used in inter-VM memory transactions
 /dev/mem_buf_vm/qcom,trusted_vm			u:object_r:vendor_vm_primary_device:s0
 /dev/mem_buf_vm/qcom,primary_vm			u:object_r:vendor_vm_trusted_device:s0
 /dev/mem_buf_vm/qcom,hlos			u:object_r:vendor_vm_hlos_device:s0
