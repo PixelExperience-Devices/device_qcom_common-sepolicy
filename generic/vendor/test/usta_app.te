@@ -49,8 +49,8 @@ allow vendor_usta_app {
   surfaceflinger_service
 }:service_manager find;
 
-allow vendor_usta_app system_app_data_file:dir create_dir_perms;
-allow vendor_usta_app system_app_data_file:file create_file_perms;
+allow vendor_usta_app vendor_usta_app_data_file:dir create_dir_perms;
+allow vendor_usta_app vendor_usta_app_data_file:file create_file_perms;
 
 allow vendor_usta_app vendor_sensors_vendor_data_file:dir create_dir_perms;
 allow vendor_usta_app vendor_sensors_vendor_data_file:file create_file_perms;
