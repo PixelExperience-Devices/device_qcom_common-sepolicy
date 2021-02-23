@@ -233,3 +233,6 @@
 
 /vendor/bin/hw/vendor\.qti\.hardware\.display\.demura@1\.0-service u:object_r:hal_display_demura_default_exec:s0
 
+#powermodule database
+/data/vendor/pwr(/.*)? u:object_r:vendor_pm_data_file:s0
+
