@@ -122,3 +122,7 @@ allow vendor_hal_perf_default graphics_device:chr_file rw_file_perms;
 
 allow vendor_hal_perf_default block_device:dir { open read search };
 allow vendor_hal_perf_default proc_diskstats:file { getattr open read };
+
+# Rule for vndbinder usage
+allow vendor_hal_perf vendor_qdisplay_service:service_manager find;
+vndbinder_use(vendor_hal_perf);
