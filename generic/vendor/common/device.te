@@ -62,7 +62,7 @@ type vendor_dmabuf_audio_ml_heap_device, dev_type;
 
 type vendor_membuf_dev, dev_type;
 
-type vendor_vm_primary_device, dev_type;
+type vendor_vm_self_device, dev_type;
 type vendor_vm_trusted_device, dev_type;
 type vendor_vm_hlos_device, dev_type;
 type vendor_vm_cp_touch_device, dev_type;
