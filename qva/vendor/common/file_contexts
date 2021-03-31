@@ -63,7 +63,7 @@
 /dev/socket/wigig/wigignpt                      u:object_r:vendor_wigignpt_socket:s0
 /dev/socket/wigig/sensingdaemon                 u:object_r:vendor_sensingdaemon_socket:s0
 /dev/socket/qcc_trd(/.*)?                       u:object_r:vendor_qcc_trd_socket:s0
-
+/dev/socket/qesd                                u:object_r:vendor_qesd_socket:s0
 
 /dev/smcinvoke                                  u:object_r:tee_device:s0
 ###################################
