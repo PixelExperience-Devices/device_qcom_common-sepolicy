@@ -68,8 +68,4 @@ userdebug_or_eng(`
   allow vendor_agmservice_qti vendor_data_file:file r_file_perms;
 #allow proc_sysrq access for crash dump
   allow vendor_agmservice_qti proc_sysrq:file rw_file_perms;
-#allow access to debug fs
-  allow vendor_agmservice_qti debugfs:dir r_dir_perms;
-  allow vendor_agmservice_qti vendor_qti_debugfs:dir r_dir_perms;
-  allow vendor_agmservice_qti vendor_qti_debugfs:file rw_file_perms;
 ')
