@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,35 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Policy file for qcom-system-daemon
-#qcomsysd = qcom-system-daemon domain
-type vendor_qcomsysd, domain;
-type vendor_qcomsysd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(vendor_qcomsysd);
-
-#Needed for logging
-allow vendor_qcomsysd vendor_smem_log_device:chr_file rw_file_perms;
-
-#Needed to read/write cookies to the misc partition
-allow vendor_qcomsysd block_device:dir r_dir_perms;
-
-#Needed to get image info from socinfo
-r_dir_file(vendor_qcomsysd, vendor_sysfs_soc)
-allow vendor_qcomsysd vendor_sysfs_soc:file w_file_perms;
-allow vendor_qcomsysd self:socket create;
-
-allow vendor_qcomsysd self:capability { sys_boot };
-allow vendor_qcomsysd self:qipcrtr_socket create_socket_perms_no_ioctl;
-use_vendor_per_mgr(vendor_qcomsysd);
-
-#diag
-userdebug_or_eng(`
-    diag_use(vendor_qcomsysd)
-    use_diag_handler_ffbm(vendor_qcomsysd)
-    set_prop(vendor_qcomsysd, powerctl_prop)
-    allow vendor_qcomsysd vendor_sysfs_qdss_dev:dir r_dir_perms;
-    allow vendor_qcomsysd vendor_sysfs_qdss_dev:file rw_file_perms;
-    allow vendor_qcomsysd vendor_sysfs_data:file r_file_perms;
-    hal_client_domain(vendor_qcomsysd, vendor_hal_diaghal)
-    hal_client_domain(vendor_qcomsysd, hal_allocator)
+#####################################
+# use_diag_handler_ffbm(clientdomain)
+# allow clientdomain to access boot mode switch
+define(`use_diag_handler_ffbm', `
+  userdebug_or_eng(`
+    set_prop($1, vendor_boot_mode_prop);
+  ')
 ')
