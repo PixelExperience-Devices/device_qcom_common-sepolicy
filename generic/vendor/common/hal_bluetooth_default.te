@@ -51,10 +51,8 @@ allow hal_bluetooth_default proc_sysrq:file rw_file_perms;
 allow hal_bluetooth_default vendor_bt_data_file:dir ra_dir_perms;
 allow hal_bluetooth_default vendor_bt_data_file:file create_file_perms;
 allow hal_bluetooth_default self:{ socket } create_socket_perms_no_ioctl;
-no_debugfs_restriction(`
 allow hal_bluetooth_default vendor_debugfs_bt_tracing:dir r_dir_perms;
 allow hal_bluetooth_default vendor_debugfs_bt_tracing:file r_file_perms;
-')
 allow hal_bluetooth_default debugfs_tracing_instances:dir search;
 ')
 
