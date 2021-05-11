@@ -31,6 +31,7 @@ type vendor_sysfs_bond0, fs_type, sysfs_type;
 type vendor_sysfs_boot_adsp, sysfs_type, fs_type;
 type vendor_sysfs_camera, sysfs_type, fs_type;
 type vendor_sysfs_cpu_boost, fs_type, sysfs_type;
+type vendor_sysfs_devcd, fs_type, sysfs_type;
 type vendor_sysfs_devfreq, fs_type, sysfs_type;
 type vendor_sysfs_easel, sysfs_type, fs_type;
 type vendor_sysfs_esoc, sysfs_type, fs_type;
