@@ -46,6 +46,7 @@ allow vendor_qsta_app {
 dontaudit vendor_qsta_app gpu_service:service_manager find;
 dontaudit vendor_qsta_app gpuservice:binder call;
 dontaudit vendor_qsta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit vendor_qsta_app default_prop:file read;
 
 userdebug_or_eng(`
   allow vendor_qsta_app vendor_diag_device:chr_file { read write open ioctl };
