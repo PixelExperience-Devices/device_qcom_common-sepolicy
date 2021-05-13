@@ -73,7 +73,6 @@ hwbinder_use(vendor_cnd)
 get_prop(vendor_cnd, hwservicemanager_prop)
 binder_call(vendor_cnd, vendor_dataservice_app)
 binder_call(vendor_cnd, vendor_qtidataservices_app)
-binder_call(vendor_cnd, vendor_ims)
 binder_call(vendor_cnd, vendor_ims_service)
 binder_call(vendor_cnd, vendor_location)
 
