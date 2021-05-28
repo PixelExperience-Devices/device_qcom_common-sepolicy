@@ -109,3 +109,6 @@ net_domain(vendor_qcc_trd)
 
 # allow to read /proc/sys/net/core/somaxconn - needed for grpc lib
 allow vendor_qcc_trd proc_net:file r_file_perms;
+
+# allow qcc-trd to add and find vendor service
+add_service(vendor_qcc_trd, vendor_qtrsdkservice_service)
