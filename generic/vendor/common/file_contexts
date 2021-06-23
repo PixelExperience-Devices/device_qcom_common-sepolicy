@@ -77,6 +77,7 @@
 /dev/synx_device                                u:object_r:vendor_synx_device:s0
 /dev/ipa_odl_ctl                                u:object_r:vendor_ipa_dev:s0
 /dev/ipa_adpl                                   u:object_r:vendor_ipa_dev:s0
+/dev/byte-cntr                                  u:object_r:vendor_qdss_device:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
