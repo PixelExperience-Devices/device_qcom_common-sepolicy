@@ -38,3 +38,6 @@ qesdk_access(vendor_sensors_qesdk)
 #allow access to QMI
 allow vendor_sensors_qesdk self:qipcrtr_socket create_socket_perms_no_ioctl;
 
+#allow access to use wakelock
+wakelock_use(vendor_sensors_qesdk)
+
