@@ -38,6 +38,7 @@ allow vendor_shsusrd self:netlink_kobject_uevent_socket create_socket_perms_no_i
 
 allow vendor_shsusrd vendor_shsusr_data_file:dir rw_dir_perms;
 allow vendor_shsusrd vendor_shsusr_data_file:file create_file_perms;
+get_prop(vendor_shsusrd, vendor_mpctl_prop)
 
 hal_client_domain(vendor_shsusrd, vendor_hal_perf);
 allow vendor_shsusrd vendor_ipa_vendor_data_file:dir r_dir_perms;
