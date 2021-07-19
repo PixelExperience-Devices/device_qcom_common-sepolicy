@@ -29,6 +29,8 @@ userdebug_or_eng(`
   allow hal_audio vendor_diag_device:chr_file rw_file_perms;
 ')
 
+allow hal_audio vendor_adsp_sleepmon_device:chr_file rw_file_perms;
+
 hal_client_domain(hal_audio_default, vendor_hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
