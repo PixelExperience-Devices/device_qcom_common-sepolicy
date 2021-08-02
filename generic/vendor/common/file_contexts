@@ -572,3 +572,6 @@
 
 # Devcoredump framework
 /sys/devices/virtual/devcoredump/devcd[0-9]+/data       u:object_r:vendor_sysfs_devcd:s0
+
+# Microdump collector parameters
+/sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
