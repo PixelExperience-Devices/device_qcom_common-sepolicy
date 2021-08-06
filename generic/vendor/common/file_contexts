@@ -560,6 +560,7 @@
 /(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:vendor_init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.kernel\.sh       u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.write\.sh       u:object_r:vendor_qti_init_shell_bg_exec:s0
 /(vendor|system/vendor)/bin/init\.kernel\.post_boot\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.qcv\.sh          u:object_r:vendor_qti_init_shell_exec:s0
 
