@@ -63,3 +63,25 @@ hal_client_domain(vendor_sxrd_vndr, hal_audio);
 allow vendor_sxrd_vndr usb_device:chr_file rw_file_perms;
 allow vendor_sxrd_vndr usb_device:dir { open read search watch };
 allow vendor_sxrd_vndr device:dir { read watch };
+
+#Allow /dev/dma_heap file access
+allow vendor_sxrd_vndr vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_sxrd_vndr vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_sxrd_vndr vendor_vm_cp_bitstream_device:chr_file r_file_perms;
+allow vendor_sxrd_vndr vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow vendor_sxrd_vndr vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_sxrd_vndr vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+
+#Allow /dev/qce file access
+allow vendor_sxrd_vndr vendor_qce_device:chr_file rw_file_perms;
+
+#Allow access to tee device
+allow vendor_sxrd_vndr tee_device:chr_file rw_file_perms;
+
+#Allow access to firmware files for HDCP session
+r_dir_file(vendor_sxrd_vndr, firmware_file)
+
+#add sxrd to access tombstoned
+userdebug_or_eng(`
+  crash_dump_fallback(vendor_sxrd_vndr);
+')
