@@ -72,6 +72,8 @@ hal_attribute_hwservice(vendor_hal_mwqemadapter_qti, vendor_hal_mwqemadapter_hws
 
 get_prop(vendor_cnd, vendor_mwqem_prop)
 
+use_shsusrd_socket(vendor_cnd)
+
 hal_client_domain(vendor_cnd,hal_wifi_hostapd)
 
 hal_client_domain(vendor_cnd,hal_wifi_supplicant)
