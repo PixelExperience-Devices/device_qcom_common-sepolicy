@@ -131,6 +131,7 @@
 /dev/dma_heap/qcom,qseecom-ta           u:object_r:vendor_dmabuf_qseecom_ta_heap_device:s0
 /dev/dma_heap/qcom,display              u:object_r:vendor_dmabuf_display_heap_device:s0
 /dev/dma_heap/qcom,audio-ml             u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
+/dev/dma_heap/qcom,demura               u:object_r:vendor_dmabuf_demura_heap_device:s0
 
 # mem-buf device used for inter-VM memory transactions
 /dev/membuf                                     u:object_r:vendor_membuf_dev:s0
