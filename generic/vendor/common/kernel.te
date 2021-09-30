@@ -29,6 +29,7 @@ userdebug_or_eng(`
   allow kernel self:socket create;
   allow kernel self:qipcrtr_socket create;
   allow kernel self:perf_event { open cpu };
+  allow kernel vendor_debugfs_kgsl_fence_tracing:dir search;
   neverallow kernel self:perf_event ~{ open cpu };
 ')
 
