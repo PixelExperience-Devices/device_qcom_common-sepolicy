@@ -14,26 +14,15 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
     $(QSSI_SEPOLICY_PATH)/generic/private
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
-    $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(QSSI_SEPOLICY_PATH)/qva/public \
-    $(QSSI_SEPOLICY_PATH)/qva/public/attribute
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
-    $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
-    $(QSSI_SEPOLICY_PATH)/qva/private
-
 #once all the services are moved to Product /ODM above lines will be removed.
 # sepolicy rules for product images
 PRODUCT_PUBLIC_SEPOLICY_DIRS := \
     $(PRODUCT_PUBLIC_SEPOLICY_DIRS) \
-    $(QSSI_SEPOLICY_PATH)/generic/product/public \
-    $(QSSI_SEPOLICY_PATH)/qva/product/public
+    $(QSSI_SEPOLICY_PATH)/generic/product/public
 
 PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
-    $(QSSI_SEPOLICY_PATH)/generic/product/private \
-    $(QSSI_SEPOLICY_PATH)/qva/product/private
+    $(QSSI_SEPOLICY_PATH)/generic/product/private
 
 ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
