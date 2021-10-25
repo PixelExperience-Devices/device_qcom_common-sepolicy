@@ -264,3 +264,6 @@ type vendor_sysfs_microdump, fs_type, sysfs_type;
 
 #rmnet module files
 type vendor_sysfs_rmnet, fs_type, sysfs_type;
+
+# display boot param files
+type vendor_sysfs_disp_boot_param, fs_type, sysfs_type;
