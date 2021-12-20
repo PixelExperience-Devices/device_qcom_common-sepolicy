@@ -44,6 +44,7 @@ type vendor_mhi_device, dev_type;
 type vendor_efs_boot_dev, dev_type;
 type vendor_smem_log_device, dev_type;
 type vendor_fm_radio_device, dev_type;
+type vendor_ese_gpio_device, dev_type;
 
 #define qg char device
 type vendor_qg_device, dev_type;
