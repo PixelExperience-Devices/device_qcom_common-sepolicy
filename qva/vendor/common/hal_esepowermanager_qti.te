@@ -61,3 +61,6 @@ allow vendor_hal_esepowermanager_qti vendor_dmabuf_qseecom_heap_device:chr_file 
 
 # Allow esepowermanager HAL to interact with NFC service
 hal_client_domain(vendor_hal_esepowermanager_qti, hal_nfc)
+
+# Allow esepowermanager HAL to set eSE vendor properties
+set_prop(vendor_hal_esepowermanager_qti, vendor_ese_prop)
