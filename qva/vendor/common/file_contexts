@@ -65,7 +65,7 @@
 /dev/socket/wigig/wpa_wigig[0-9]                u:object_r:vendor_wigig_vendor_wpa_socket:s0
 /dev/socket/wigig/wigignpt                      u:object_r:vendor_wigignpt_socket:s0
 /dev/socket/wigig/sensingdaemon                 u:object_r:vendor_sensingdaemon_socket:s0
-/dev/socket/qcc_trd(/.*)?                       u:object_r:vendor_qcc_trd_socket:s0
+/dev/socket/qcc_trd(/.*)?                       u:object_r:vendor_qccvendor_socket:s0
 /dev/socket/qesd                                u:object_r:vendor_qesd_socket:s0
 /dev/socket/qvrservice_vndr                     u:object_r:vendor_qvrd_vndr_socket:s0
 /dev/socket/qvrservice_vndr_camera              u:object_r:vendor_qvrd_vndr_socket:s0
@@ -124,7 +124,8 @@
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/mlid                                                   u:object_r:vendor_mlid_exec:s0
-/(vendor|system/vendor)/bin/qcc-trd                                             u:object_r:vendor_qcc_trd_2_exec:s0
+/(vendor|system/vendor)/bin/qcc-trd                                                u:object_r:vendor_qcc_trd_2_exec:s0
+/(vendor|system/vendor)/bin/qcc-vendor                                             u:object_r:vendor_qccvendor_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/qfp-daemon                                          u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
@@ -212,7 +213,7 @@
 /data/vendor/perfd(/.*)?                                            u:object_r:vendor_mpctl_data_file:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qcc_trd_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qcc_trd_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qccvendor_data_file:s0
 /data/vendor/qwes(/.*)?                                             u:object_r:vendor_qwes_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0

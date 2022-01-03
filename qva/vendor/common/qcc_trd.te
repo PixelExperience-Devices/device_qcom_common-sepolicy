@@ -117,9 +117,6 @@ allow vendor_qcc_trd_2 mnt_user_file:dir search;
 allow vendor_qcc_trd_2 mnt_user_file:lnk_file read;
 ')
 
-# allow qcc-trd to add and find vendor service
-add_service(vendor_qcc_trd_2, vendor_qtrsdkservice_service)
-
 # allow qcc-trd to add qccvndhal service to hwservicemanager
 hal_server_domain(vendor_qcc_trd_2, vendor_hal_qccvndhal)
 hal_attribute_hwservice(vendor_hal_qccvndhal, vendor_hal_qccvndhal_hwservice)
