@@ -25,14 +25,44 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#
+#     * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 # vendor_qcc_trd is deprecated, vendor_qcc_trd_2 is the newer version
 type vendor_qcc_trd_2, domain;
 
 type vendor_qcc_trd_2_exec, file_type, vendor_file_type, exec_type;
 
 init_daemon_domain(vendor_qcc_trd_2)
-
-vndbinder_use(vendor_qcc_trd_2)
 
 allow vendor_qcc_trd_2 vendor_qcc_trd_data_file:file create_file_perms;
 allow vendor_qcc_trd_2 vendor_qcc_trd_data_file:dir create_dir_perms;
@@ -97,9 +127,6 @@ allow vendor_qcc_trd_2 vendor_persist_rfs_shared_hlos_file:file create_file_perm
 # for logcat
 unix_socket_connect(vendor_qcc_trd_2, logdr, logd);
 
-# allow qcc_prop
-set_prop(vendor_qcc_trd_2, vendor_qcc_prop);
-
 # qmi
 qmux_socket(vendor_qcc_trd_2);
 allow vendor_qcc_trd_2 self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
@@ -117,13 +144,5 @@ allow vendor_qcc_trd_2 mnt_user_file:dir search;
 allow vendor_qcc_trd_2 mnt_user_file:lnk_file read;
 ')
 
-# allow qcc-trd to add qccvndhal service to hwservicemanager
-hal_server_domain(vendor_qcc_trd_2, vendor_hal_qccvndhal)
-hal_attribute_hwservice(vendor_hal_qccvndhal, vendor_hal_qccvndhal_hwservice)
-
-#Allow hwbinder call from hal client to server
-binder_call(vendor_hal_qccvndhal_client, vendor_hal_qccvndhal_server)
-binder_call(vendor_hal_qccvndhal_server, vendor_hal_qccvndhal_client)
-
-#allow access to qccsyshal
-hal_client_domain(vendor_qcc_trd_2, vendor_qccsyshal);
+# use QTR SDK
+qtr_sdk_use(vendor_qcc_trd_2)
