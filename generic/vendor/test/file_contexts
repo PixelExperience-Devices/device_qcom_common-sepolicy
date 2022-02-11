@@ -71,12 +71,16 @@
 /(vendor|system/vendor)/bin/qseeproxysampledaemon u:object_r:vendor_qseeproxysample_exec:s0
 
 #### Context for location test binaries
-/(vendor|system/vendor)/bin/lowi_test                           u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/test-version                        u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/test-pos-tx                         u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/xtwifi-upload-test                  u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/test-fake-ap                        u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/test-fdal                           u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/slim_client                         u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/lowi_test                           u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/test-version                        u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/test-pos-tx                         u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-upload-test                  u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/test-fake-ap                        u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/test-fdal                           u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/qsh_location_test                   u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/qsh_geofence_test                   u:object_r:vendor_location_test_exec:s0
+/(vendor|system/vendor)/bin/qsh_slpi_loc_test                   u:object_r:vendor_location_test_exec:s0
 
 #### Context for qguard
 /(vendor|system/vendor)/bin/qguard        u:object_r:vendor_qguard_exec:s0

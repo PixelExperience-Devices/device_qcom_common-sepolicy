@@ -192,9 +192,11 @@
 /vendor/bin/shsusrd             u:object_r:vendor_shsusrd_exec:s0
 /vendor/bin/port-bridge         u:object_r:vendor_port-bridge_exec:s0
 /vendor/bin/qti                 u:object_r:vendor_qti_exec:s0
+## Context for location features - start
 /vendor/bin/loc_launcher        u:object_r:vendor_location_exec:s0
-/vendor/bin/lowi-server         u:object_r:vendor_location_exec:s0
-/vendor/bin/xtra-daemon         u:object_r:vendor_location_exec:s0
+/vendor/bin/lowi-server         u:object_r:vendor_location_lowi_server_exec:s0
+/vendor/bin/xtra-daemon         u:object_r:vendor_location_xtra_daemon_exec:s0
+## Context for location features - end
 /vendor/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /vendor/bin/ims_rtp_daemon      u:object_r:vendor_hal_imsrtp_exec:s0
 /vendor/bin/mstatdaemon			u:object_r:vendor_hal_mstatservice_exec:s0
