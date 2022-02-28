@@ -33,6 +33,9 @@ typeattribute vendor_sxrd_vndr vendor_sys_sxrauxservice_qti_socket_client;
 init_daemon_domain(vendor_sxrd_vndr)
 
 hal_server_domain(vendor_sxrd_vndr, vendor_hal_sxrservice_qti)
+
+binder_service(vendor_sxrd_vndr)
+
 binder_call(vendor_hal_sxrservice_qti_client, vendor_hal_sxrservice_qti_server)
 binder_call(vendor_hal_sxrservice_qti_server, vendor_hal_sxrservice_qti_client)
 
