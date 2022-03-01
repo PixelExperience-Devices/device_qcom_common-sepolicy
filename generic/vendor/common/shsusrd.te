@@ -87,3 +87,6 @@ netmgr_socket(vendor_shsusrd);
 allow vendor_shsusrd vendor_shsusrd_socket:dir w_dir_perms;
 allow vendor_shsusrd vendor_shsusrd_socket:sock_file { create setattr unlink };
 allow vendor_shsusrd self:netlink_route_socket { nlmsg_read nlmsg_write nlmsg_readpriv create_socket_perms_no_ioctl };
+
+allow vendor_shsusrd vendor_sysfs_rmnet:dir r_dir_perms;
+allow vendor_shsusrd vendor_sysfs_rmnet:file r_file_perms;
