@@ -209,9 +209,12 @@ get_prop($1, vendor_soc_id_prop);
 # syntax: qtr_sdk_use(clientdomain)
 define(`qtr_sdk_use', `
 vndbinder_use($1)
+# qtrsdkservice client for registering & start/stop campaign
 allow $1 vendor_qtrsdkservice_service:service_manager find;
 binder_call($1, vendor_qccvendor)
 binder_call(vendor_qccvendor, $1)
+# qccsyshal client for sending data
+hal_client_domain($1, vendor_qccsyshal);
 ')
 
 #####################################
