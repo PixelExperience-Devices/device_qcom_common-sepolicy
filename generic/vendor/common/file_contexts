@@ -390,6 +390,7 @@
 /data/vendor/qmipriod(/.*)?            u:object_r:vendor_qmipriod_data_file:s0
 /data/vendor/shsusr(/.*)?              u:object_r:vendor_shsusr_data_file:s0
 /data/vendor/location(/.*)?            u:object_r:vendor_location_data_file:s0
+/data/vendor/location-partner(/.*)?    u:object_r:vendor_location_data_file:s0
 /data/vendor/camera(/.*)?              u:object_r:vendor_camera_data_file:s0
 /data/vendor/display(/.*)?             u:object_r:vendor_display_vendor_data_file:s0
 /data/vendor/nfc(/.*)?                 u:object_r:vendor_nfc_vendor_data_file:s0
