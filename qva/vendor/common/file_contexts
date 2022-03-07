@@ -190,14 +190,13 @@
 #### Context for location features
 ## location daemons and binaries
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service                        u:object_r:vendor_hal_gnss_qti_exec:s0
-/(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:vendor_location_xtwifi_inetagent_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:vendor_location_xtwifi_client_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti      u:object_r:vendor_hal_seccam_qti_exec:s0
-/(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:vendor_location_exec:s0
-/(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_garden_app_exec:s0
+/(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_slim_daemon_exec:s0
 /(vendor|system/vendor)/bin/engine-service                                         u:object_r:vendor_location_engine_service_exec:s0
-/(vendor|system/vendor)/bin/edgnss-daemon                                          u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/edgnss-daemon                                          u:object_r:vendor_location_edgnss_daemon_exec:s0
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0

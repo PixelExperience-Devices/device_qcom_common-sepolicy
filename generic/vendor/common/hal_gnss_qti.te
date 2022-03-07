@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# generic/vendor_hal_gnss_qti.te - generic sepolicy rules for vendor_location hidl
+# generic/vendor/common/hal_gnss_qti.te - generic sepolicy rules for vendor_location hidl
 
 type vendor_hal_gnss_qti, domain;
 hal_server_domain(vendor_hal_gnss_qti, hal_gnss)
@@ -46,6 +46,8 @@ allow vendor_hal_gnss_qti vendor_location_socket: {sock_file lnk_file } create_f
 allow vendor_hal_gnss_qti vendor_location_socket:dir rw_dir_perms;
 allow vendor_hal_gnss_qti vendor_location:unix_stream_socket connectto;
 allow vendor_hal_gnss_qti vendor_location:unix_dgram_socket sendto;
+allow vendor_hal_gnss_qti vendor_location_xtra_daemon:unix_dgram_socket sendto;
+allow vendor_hal_gnss_qti vendor_location_lowi_server:unix_dgram_socket sendto;
 
 # allow reading /sys/bus/mhi/devices/.../time_us files, this files hold the
 # time offset between local and remote for dual SoC architectures
