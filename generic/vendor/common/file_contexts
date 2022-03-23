@@ -1,4 +1,5 @@
 # Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -554,6 +555,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/perfcounter u:object_r:vendor_sysfs_kgsl_shell:s0
 /sys/devices/platform/soc/3d00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
 
 /sys/devices/soc/[a-f0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:vendor_sysfs_usb_supply:s0
