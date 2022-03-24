@@ -53,6 +53,25 @@ allow hal_audio_default vendor_audio_data_file:file create_file_perms;
 #Allow qipcrtr socket permisison
 allow hal_audio_default self:qipcrtr_socket create_socket_perms_no_ioctl;
 
+#Allow access to agm device nodes
+allow hal_audio_default vendor_agm_device:chr_file rw_file_perms;
+
+#Allow access to dmabuf
+allow hal_audio_default dmabuf_system_heap_device:chr_file r_file_perms;
+
+#Allow access to dmabuf_cma
+allow hal_audio_default vendor_dmabuf_audio_ml_heap_device:chr_file r_file_perms;
+
+#allow access to agm crash notificaiton sysfs node
+allow hal_audio_default vendor_sysfs_agm:file rw_file_perms;
+allow hal_audio_default vendor_sysfs_agm:dir r_dir_perms;
+
+#Allow to trigger SSR when unable to communicate with ADSP
+allow hal_audio_default vendor_sysfs_adsp_ssr:file w_file_perms;
+
+# Allow audio hal to set RT scheduling for LL/ULL audio
+allow hal_audio_default self:global_capability_class_set sys_nice;
+
 #Allow hal audio to use Binder IPC
 vndbinder_use(hal_audio)
 
