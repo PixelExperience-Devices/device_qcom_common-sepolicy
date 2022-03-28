@@ -430,7 +430,6 @@
 /mnt/vendor/persist/display(/.*)?    u:object_r:vendor_persist_display_file:s0
 /mnt/vendor/persist/drm(/.*)?        u:object_r:vendor_persist_drm_file:s0
 /mnt/vendor/persist/elabel(/.*)?     u:object_r:vendor_persist_elabel_file:s0
-/mnt/vendor/persist/haptics(/.*)?    u:object_r:vendor_persist_haptics_file:s0
 /mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:vendor_persist_rfs_shared_hlos_file:s0
 /mnt/vendor/persist/rfs(/.*)?        u:object_r:vendor_persist_rfs_file:s0
 /mnt/vendor/persist/sensors(/.*)?    u:object_r:vendor_persist_sensors_file:s0
@@ -447,10 +446,6 @@
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
-
-#TODO: move this to genfs_context or target based file_context
-# sysfs_leds
-/sys/devices/platform/soc/[a-f0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 
 # vendor_sysfs_devfreq
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:vendor_sysfs_devfreq:s0
@@ -526,7 +521,6 @@
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[0-9a-f]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-f]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-f0-9]+(/.*)? u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
