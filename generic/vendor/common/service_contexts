@@ -38,3 +38,4 @@ vendor.qti.hardware.display.config.IDisplayConfig/default u:object_r:vendor_hal_
 vendor.qti.hardware.radio.qcrilhook.IQtiOemHook/oemhook0 u:object_r:vendor_hal_telephony_service2:s0
 vendor.qti.hardware.radio.qcrilhook.IQtiOemHook/oemhook1 u:object_r:vendor_hal_telephony_service2:s0
 vendor.qti.hardware.radio.internal.deviceinfo.IDeviceInfo/deviceinfo u:object_r:vendor_hal_telephony_service2:s0
+vendor.qti.hardware.radio.qtiradioconfig.IQtiRadioConfig/default u:object_r:vendor_hal_telephony_service2:s0
