@@ -46,7 +46,6 @@ allow vendor_cnd vendor_wifi_vendor_data_file:dir r_dir_perms;
 allow vendor_cnd vendor_wifi_vendor_wpa_socket:sock_file write;
 
 #allow vendor_cnd daemon to invoke hostapd_cli
-allow vendor_cnd vendor_shell_exec:file rx_file_perms;
 domain_auto_trans(vendor_cnd, vendor_hostapd_exec, vendor_hostapd)
 allow vendor_cnd vendor_hostapd_socket:dir r_dir_perms;
 unix_socket_send(vendor_cnd, vendor_hostapd, vendor_hostapd)

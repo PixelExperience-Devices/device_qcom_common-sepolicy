@@ -156,6 +156,8 @@ allow $1 system_file:dir r_dir_perms;
 get_prop($1, hwservicemanager_prop)
 typeattribute $1 $2_server;
 typeattribute $1 $2;
+typeattribute $1 vendor_halserverdomain;
+neverallow { vendor_halserverdomain - netdomain - vendor_qtiloopback_native - vendor_wigignpt } hwservicemanager:binder { call transfer };
 ')
 
 #####################################
