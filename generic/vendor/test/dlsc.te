@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Qualcomm Innovation Center, Inc.
+# Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -12,7 +12,7 @@
 #       disclaimer in the documentation and/or other materials provided
 #       with the distribution.
 #
-#     * Neither the name of Qualcomm Innovation Center nor the names of its
+#     * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
@@ -29,28 +29,41 @@
 # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type vendor_dlsc, domain;
+type vendor_dlsc_exec, exec_type, vendor_file_type, file_type;
 
-# vendor_trusteduilistener - TrustedUI Listener Daemon
-type vendor_trusteduilistener, domain;
-type vendor_trusteduilistener_exec, exec_type, vendor_file_type, file_type;
+net_domain(vendor_dlsc)
+init_daemon_domain(vendor_dlsc)
 
-init_daemon_domain(vendor_trusteduilistener)
+allow vendor_dlsc vendor_dlsc_socket:dir w_dir_perms;
+allow vendor_dlsc vendor_dlsc_socket:sock_file create_file_perms;
+allow vendor_dlsc self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write nlmsg_read };
+allow vendor_dlsc self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow vendor_dlsc self:netlink_route_socket nlmsg_write;
+allow vendor_dlsc self:netlink_socket create_socket_perms_no_ioctl;
+allow vendor_dlsc self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-# Display HAL access
-hal_client_domain(vendor_trusteduilistener, hal_graphics_composer);
+allowxperm vendor_dlsc self:udp_socket ioctl priv_sock_ioctls;
 
-# System helper HAL
-hal_client_domain(vendor_trusteduilistener, vendor_hal_systemhelper);
+sprhd_socket(vendor_dlsc);
 
-# Allow access to SSGTZD socket
-unix_socket_connect(vendor_trusteduilistener, vendor_ssgtzd, vendor_ssgtzd)
-allow vendor_trusteduilistener vendor_ssgtzd_opener_socket:sock_file write;
+allow vendor_dlsc sysfs_net:dir r_dir_perms;
+allow vendor_dlsc sysfs_net:file rw_file_perms;
+allow vendor_dlsc vendor_sysfs_data:file r_file_perms;
 
-# Allow CPU files
-allow vendor_trusteduilistener sysfs_devices_system_cpu:file rw_file_perms;
+allow vendor_dlsc proc_net:file rw_file_perms;
 
-# Allow Secure Touch file
-allow vendor_trusteduilistener sysfs:dir { open read };
-allow vendor_trusteduilistener vendor_sysfs_trusted_touch_enable:file rw_file_perms;
-allow vendor_trusteduilistener vendor_sysfs_trusted_touch_event:file rw_file_perms;
-allow vendor_trusteduilistener vendor_sysfs_trusted_touch_type:file rw_file_perms;
+#Allow netutils usage
+domain_auto_trans(vendor_dlsc, netutils_wrapper_exec, netutils_wrapper)
+
+use_netutils(vendor_dlsc)
+
+#Allow diag logging
+userdebug_or_eng(`
+  r_dir_file(vendor_dlsc, vendor_sysfs_diag)
+')
+
+allow vendor_dlsc self:capability { net_admin net_raw };
+
+#Allow ifconfig execution
+allow vendor_dlsc { vendor_shell_exec vendor_toolbox_exec }:file rx_file_perms;

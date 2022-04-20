@@ -87,12 +87,9 @@
 /dev/adsprpc-smd                                u:object_r:vendor_qdsp_device:s0
 /dev/adsprpc-smd-secure                         u:object_r:vendor_xdsp_device:s0
 /dev/sdsprpc-smd                                u:object_r:vendor_dsp_device:s0
-/dev/wcd-dsp-glink                              u:object_r:audio_device:s0
-/dev/wcd_dsp0_control                           u:object_r:audio_device:s0
-/dev/wcd-spi-ac-client                          u:object_r:audio_device:s0
 /dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
-/dev/msm_.*                                     u:object_r:audio_device:s0
+/dev/msm_audio_ion_cma                          u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/remoteproc.*                               u:object_r:vendor_ssr_device:s0
@@ -103,6 +100,7 @@
 /dev/sg[0-9]+                                   u:object_r:vendor_sg_device:s0
 /dev/ufs-bsg.*                                   u:object_r:vendor_bsg_device:s0
 /dev/0:0:0:49476                                u:object_r:vendor_bsg_device:s0
+/dev/0:0:0:4                                    u:object_r:vendor_ufs_lun4_bsg_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
 /dev/mnh_sm                                     u:object_r:vendor_easel_device:s0
 /dev/easelcomm-client                           u:object_r:vendor_easel_device:s0
@@ -189,7 +187,8 @@
 /dev/mem_buf_vm/qcom,cp_spss_hlos_shared	u:object_r:vendor_vm_cp_spss_hlos_shared_device:s0
 /dev/mem_buf_vm/qcom,cp_cdsp			u:object_r:vendor_vm_cp_cdsp_device:s0
 /dev/mem_buf_vm/qcom,cp_app			u:object_r:vendor_vm_cp_app_device:s0
-
+# Raw HID Device
+/dev/hidraw[0-9]*                  u:object_r:vendor_hidraw_device:s0
 
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
@@ -262,6 +261,7 @@
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti        u:object_r:vendor_hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss.*-service-qti u:object_r:vendor_hal_gnss_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti         u:object_r:hal_bluetooth_default_exec:s0
+/vendor/bin/hw/android\.hardware\.bluetooth@1\.1-service-qti         u:object_r:hal_bluetooth_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service.widevine    u:object_r:vendor_hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]+\.[2-9]+-service-lazy.widevine    u:object_r:vendor_hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
@@ -428,7 +428,6 @@
 /mnt/vendor/persist/display(/.*)?    u:object_r:vendor_persist_display_file:s0
 /mnt/vendor/persist/drm(/.*)?        u:object_r:vendor_persist_drm_file:s0
 /mnt/vendor/persist/elabel(/.*)?     u:object_r:vendor_persist_elabel_file:s0
-/mnt/vendor/persist/haptics(/.*)?    u:object_r:vendor_persist_haptics_file:s0
 /mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:vendor_persist_rfs_shared_hlos_file:s0
 /mnt/vendor/persist/rfs(/.*)?        u:object_r:vendor_persist_rfs_file:s0
 /mnt/vendor/persist/sensors(/.*)?    u:object_r:vendor_persist_sensors_file:s0
@@ -445,10 +444,6 @@
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
-
-#TODO: move this to genfs_context or target based file_context
-# sysfs_leds
-/sys/devices/platform/soc/[a-f0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 
 # vendor_sysfs_devfreq
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:vendor_sysfs_devfreq:s0
@@ -519,11 +514,11 @@
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:vendor_sysfs_graphics:s0
 /sys/module/drm/parameters/vblankoffdelay                           u:object_r:vendor_sysfs_graphics:s0
+/sys/module/msm_drm/parameters/dsi_display([0-1])                   u:object_r:vendor_sysfs_disp_boot_param:s0
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[0-9a-f]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-f]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-f0-9]+(/.*)? u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
