@@ -45,6 +45,8 @@ allow vendor_dlsc self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 allowxperm vendor_dlsc self:udp_socket ioctl priv_sock_ioctls;
 
+allow vendor_dlsc self:tipc_socket { create_socket_perms_no_ioctl };
+
 sprhd_socket(vendor_dlsc);
 
 allow vendor_dlsc sysfs_net:dir r_dir_perms;
