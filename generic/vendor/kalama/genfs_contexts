@@ -277,3 +277,11 @@ genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-dsps/wakeup u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-cdsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-modem/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/dummy_hcd.0/usb1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/898000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-kiwi/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc1/3000000.remoteproc-adsp:glink-edge/3000000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+
