@@ -41,6 +41,11 @@ allow vendor_qccvendor mnt_user_file:lnk_file read;
 
 allow vendor_qccvendor self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
 
+# qcc-vendor.alog
+unix_socket_connect(vendor_qccvendor, logdr, logd);
+allow vendor_qccvendor vendor_qcc_trd_data_file:file create_file_perms;
+allow vendor_qccvendor vendor_qcc_trd_data_file:dir create_dir_perms;
+
 # allow qcc-vendor to add and find vendor service
 add_service(vendor_qccvendor, vendor_qtrsdkservice_service)
 
