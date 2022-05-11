@@ -33,6 +33,7 @@ allow vendor_cnd vendor_smem_log_device:chr_file rw_file_perms;
 
 # allow vendor_cnd the following capability
 allow vendor_cnd self:capability {
+    net_raw
     net_admin
 };
 
