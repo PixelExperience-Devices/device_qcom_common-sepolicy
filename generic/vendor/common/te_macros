@@ -156,6 +156,8 @@ allow $1 system_file:dir r_dir_perms;
 get_prop($1, hwservicemanager_prop)
 typeattribute $1 $2_server;
 typeattribute $1 $2;
+typeattribute $1 vendor_halserverdomain;
+neverallow { vendor_halserverdomain - netdomain - vendor_qtiloopback_native - vendor_wigignpt } hwservicemanager:binder { call transfer };
 ')
 
 #####################################
@@ -221,4 +223,7 @@ hal_client_domain($1, vendor_qccsyshal);
 # qesdk_access(clientdomain)
 define(`qesdk_access', `
 unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
+userdebug_or_eng(`
+  unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);
+  get_prop($1, vendor_qesdk_one_prop); ')
 ')

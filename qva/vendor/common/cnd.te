@@ -33,6 +33,7 @@ allow vendor_cnd vendor_smem_log_device:chr_file rw_file_perms;
 
 # allow vendor_cnd the following capability
 allow vendor_cnd self:capability {
+    net_raw
     net_admin
 };
 
@@ -46,7 +47,6 @@ allow vendor_cnd vendor_wifi_vendor_data_file:dir r_dir_perms;
 allow vendor_cnd vendor_wifi_vendor_wpa_socket:sock_file write;
 
 #allow vendor_cnd daemon to invoke hostapd_cli
-allow vendor_cnd vendor_shell_exec:file rx_file_perms;
 domain_auto_trans(vendor_cnd, vendor_hostapd_exec, vendor_hostapd)
 allow vendor_cnd vendor_hostapd_socket:dir r_dir_perms;
 unix_socket_send(vendor_cnd, vendor_hostapd, vendor_hostapd)
@@ -71,6 +71,8 @@ binder_call(vendor_hal_mwqemadapter_qti_server, vendor_hal_mwqemadapter_qti_clie
 hal_attribute_hwservice(vendor_hal_mwqemadapter_qti, vendor_hal_mwqemadapter_hwservice)
 
 get_prop(vendor_cnd, vendor_mwqem_prop)
+
+use_shsusrd_socket(vendor_cnd)
 
 hal_client_domain(vendor_cnd,hal_wifi_hostapd)
 

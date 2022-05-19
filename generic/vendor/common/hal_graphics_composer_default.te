@@ -1,5 +1,7 @@
 # Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -72,6 +74,7 @@ allowxperm hal_graphics_composer_default vendor_dmabuf_system_heap_device:chr_fi
 # Allow hal_graphics_composer_default to open/read vendor_membuf and vendor_vm_trusted device
 allow hal_graphics_composer_default vendor_membuf_dev:chr_file r_file_perms;
 allow hal_graphics_composer_default vendor_vm_trusted_device:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
 
 # Access /sys/devices/virtual/graphics/fb0
 r_dir_file(hal_graphics_composer_default, sysfs_type)
@@ -97,6 +100,9 @@ unix_socket_connect(hal_graphics_composer_default, vendor_qdcmsocket, vendor_qdc
 
 #allow composer to find hal_perf
 hal_client_domain(hal_graphics_composer_default, vendor_hal_perf);
+
+#allow composer to find hal_thermal
+hal_client_domain(hal_graphics_composer_default, hal_thermal);
 
 # Allow access to qipcrtr_socket
 # Remove this when QMI service moves to pfmd
