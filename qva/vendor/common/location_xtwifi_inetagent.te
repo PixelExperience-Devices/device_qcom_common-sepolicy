@@ -69,3 +69,6 @@ allow vendor_location_xtwifi_inetagent vendor_location_lowi_server:unix_dgram_so
 
 ## send to /dev/socket/location/mq/XTWiFi-PE
 allow vendor_location_xtwifi_inetagent vendor_location_xtwifi_client:unix_dgram_socket sendto;
+
+## send to /dev/socket/location/mq/SLIM
+allow vendor_location_xtwifi_inetagent vendor_location_slim_daemon:unix_dgram_socket sendto;
