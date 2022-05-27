@@ -69,6 +69,9 @@ allow vendor_location_xtra_daemon self:qipcrtr_socket create_socket_perms_no_ioc
 # Enable standard network access (for XTRA download)
 net_domain(vendor_location_xtra_daemon)
 
+# Enable register as LTC Server
+qtr_sdk_use(vendor_location_xtra_daemon)
+
 #xtra-daemon access to qcc properties
 get_prop(vendor_location_xtra_daemon, vendor_qcc_prop)
 
