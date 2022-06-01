@@ -67,3 +67,4 @@ vendor.qti.hardware.qxr.IQXRAudioService/default        u:object_r:vendor_hal_sx
 vendor.qti.hardware.data.connectionfactory.IFactory/slot0 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.hardware.data.connectionfactory.IFactory/slot1 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.data.txpwrservice.ITxPwrService/default     u:object_r:vendor_hal_qms_service:s0
+vendor.qti.hardware.bttpi.IBtTpi/default     u:object_r:vendor_hal_bttpi_service:s0
