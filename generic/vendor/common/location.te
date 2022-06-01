@@ -50,6 +50,9 @@ allow vendor_location vendor_location_socket:dir rw_dir_perms;
 # allow socket communication with gnss hal
 allow vendor_location vendor_hal_gnss_qti:unix_dgram_socket sendto;
 
+# IPC loc_mq_clnt to /dev/socket/location/mq/LOWI-SERVER
+allow vendor_location vendor_location_lowi_server:unix_dgram_socket sendto;
+
 # permission for read execute vendor_location daemons in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_exec:file rx_file_perms;
