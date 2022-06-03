@@ -48,3 +48,7 @@ crash_dump_fallback(vendor_hal_qesdhal_default);
 
 #allow qesdhal to read boot complete prop
 get_prop(vendor_hal_qesdhal_default, boot_status_prop)
+
+#allow qesdhal to get/set qesdk_ready_prop
+set_prop(vendor_hal_qesdhal_default, vendor_qesdk_ready_prop)
+get_prop(vendor_hal_qesdhal_default, vendor_qesdk_ready_prop)

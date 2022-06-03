@@ -109,3 +109,6 @@ vendor_restricted_prop(vendor_mwqem_prop);
 
 #pasr property
 vendor_internal_prop(vendor_pasr_prop);
+
+#qesdk property
+vendor_internal_prop(vendor_qesdk_ready_prop)

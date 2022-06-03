@@ -149,3 +149,6 @@ persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0
 #pasr property
 vendor.pasr.                                 u:object_r:vendor_pasr_prop:s0
 ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
+
+#qesdk ready property
+vendor.qesdk.ready                           u:object_r:vendor_qesdk_ready_prop:s0
