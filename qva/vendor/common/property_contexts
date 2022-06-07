@@ -36,6 +36,7 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 
 # qcc property
 vendor.qti.qdma.                             u:object_r:vendor_qcc_prop:s0
+persist.vendor.qtr.                          u:object_r:vendor_qtr_prop:s0
 
 ro.vendor.confqmaa            u:object_r:vendor_confqmaa:s0 exact bool
 
