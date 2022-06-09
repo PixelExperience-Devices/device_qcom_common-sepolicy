@@ -86,6 +86,8 @@ allow vendor_qms self:netlink_route_socket nlmsg_readpriv;
 
 hal_client_domain(vendor_qms,hal_wifi_hostapd)
 hal_client_domain(vendor_qms,hal_wifi_supplicant)
+hal_client_domain(vendor_qms, hal_bluetooth)
+
 
 # allow qms to access wpa_socket
 allow vendor_qms vendor_wifi_vendor_data_file:dir r_dir_perms;
