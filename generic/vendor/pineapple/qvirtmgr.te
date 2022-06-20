@@ -24,10 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Qvirtmgr Policies
 allow vendor_qvirtmgr vendor_sysfs_guestvm:file rw_file_perms;
 allow vendor_qvirtmgr vendor_virtio_chr_device:chr_file rw_file_perms;
+allow vendor_qvirtmgr vendor_gunyah_chr_device:chr_file rw_file_perms;
 allow vendor_qvirtmgr same_process_hal_file:file r_file_perms;
 allow vendor_qvirtmgr mnt_product_file:file rw_file_perms;
 allow vendor_qvirtmgr mnt_product_file:dir search;
