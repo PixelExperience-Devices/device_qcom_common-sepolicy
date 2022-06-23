@@ -257,6 +257,7 @@
 /(vendor|system/vendor)/bin/hw/sxrservice                                          u:object_r:vendor_sxrd_vndr_exec:s0
 /vendor/bin/trusteduilistener                                                      u:object_r:vendor_trusteduilistener_exec:s0
 /vendor/bin/modemManager                                                           u:object_r:vendor_modem_manager_exec:s0
+/vendor/bin/qsap_dcfd                                                              u:object_r:vendor_dcfd_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
