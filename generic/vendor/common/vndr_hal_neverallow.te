@@ -36,6 +36,7 @@ neverallow {
   -vendor_hal_dpmapiservice_qti
   -vendor_wigignpt
   -vendor_cnd
+  -vendor_qms
   userdebug_or_eng(` -vendor_hal_diaghal')
 } self:global_capability_class_set { net_admin net_raw };
 
@@ -50,6 +51,7 @@ neverallow {
   -vendor_dpmd_vndr
   -vendor_qtidataservices_app
   -vendor_hal_dpmQmiMgr
+  -vendor_qms
   userdebug_or_eng(` -vendor_hal_diaghal')
   userdebug_or_eng(` -vendor_qtiloopback_native')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
