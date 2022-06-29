@@ -1,4 +1,0 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-get_prop(vendor_hal_poweroptservice_qti, vendor_soc_name_prop)
