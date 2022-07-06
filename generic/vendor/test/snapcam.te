@@ -45,3 +45,5 @@ allow vendor_snapcam_app audioserver_service:service_manager find;
 allow vendor_snapcam_app mediaextractor_service:service_manager find;
 allow vendor_snapcam_app mediametrics_service:service_manager find;
 allow vendor_snapcam_app mediaserver_service:service_manager find;
+
+get_prop(vendor_snapcam_app, camera_config_prop)
