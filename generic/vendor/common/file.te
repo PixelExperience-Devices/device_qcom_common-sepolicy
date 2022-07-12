@@ -125,6 +125,7 @@ type vendor_shsusrd_socket, file_type;
 type vendor_port-bridge_socket, file_type;
 type vendor_thermal_socket, file_type;
 type vendor_notify-topology_socket, file_type;
+type vendor_vuidmgr_socket, file_type;
 
 #Define the qti socket type
 type vendor_dataqti_socket, file_type;

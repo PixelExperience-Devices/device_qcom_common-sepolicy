@@ -66,6 +66,8 @@ allow hal_audio_default vendor_dmabuf_audio_ml_heap_device:chr_file r_file_perms
 allow hal_audio_default vendor_sysfs_agm:file rw_file_perms;
 allow hal_audio_default vendor_sysfs_agm:dir r_dir_perms;
 
+allow hal_audio_default vendor_vui_dmgr:unix_stream_socket connectto;
+
 #Allow to trigger SSR when unable to communicate with ADSP
 allow hal_audio_default vendor_sysfs_adsp_ssr:file w_file_perms;
 
@@ -77,6 +79,9 @@ vndbinder_use(hal_audio)
 
 #Allow hal audio to access wakelock
 wakelock_use(hal_audio)
+
+#allow access to dev/socket/vuidmgr socket
+allow hal_audio_default vendor_vuidmgr_socket:sock_file rw_file_perms;
 
 #allow acess to wcd_cpe
 allow hal_audio vendor_sysfs_audio:file rw_file_perms;
