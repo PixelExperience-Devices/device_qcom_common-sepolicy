@@ -556,7 +556,6 @@
 
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_vendor_data_file:s0
-/data/vendor/nnhal(/.*)?                                            u:object_r:vendor_hal_neuralnetworks_data_file:s0
 
 # Moved to target specfic folder so removing this from common file
 #/sys/devices(/platform)?/soc/[a-f0-9\.:]+,[a-f0-9\-\_]+/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
@@ -574,10 +573,6 @@
 /vendor/etc/hbtp/*                                                  u:object_r:vendor_hbtp_cfg_file:s0
 
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)?                             u:object_r:vendor_sysfs_vadc_dev:s0
-
-#Android NN Driver
-/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-qti   u:object_r:vendor_hal_neuralnetworks_default_exec:s0
-/vendor/bin/hw/android\.hardware\.neuralnetworks-shim-service-qti   u:object_r:vendor_hal_neuralnetworks_default_exec:s0
 
 #Light AIDL HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.qti   u:object_r:hal_light_default_exec:s0
