@@ -225,5 +225,6 @@ define(`qesdk_access', `
 unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
 userdebug_or_eng(`
   unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);
-  get_prop($1, vendor_qesdk_one_prop); ')
+  get_prop($1, vendor_qesdk_one_prop);
+  allow $1 vendor_qesd_one_socket:dir r_dir_perms; ')
 ')

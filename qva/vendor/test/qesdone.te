@@ -37,6 +37,8 @@ allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:sock_file w_file_perm
 init_daemon_domain(vendor_hal_qesdonehal_default)
 
 allow vendor_hal_qesdonehal_default devpts:chr_file rw_file_perms;
+allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:dir rw_dir_perms;
+allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:sock_file create_file_perms;
 allow vendor_hal_qesdonehal_default vendor_qesd_one_token_data_file:dir create_dir_perms;
 allow vendor_hal_qesdonehal_default vendor_qesd_one_token_data_file:file create_file_perms;
 
