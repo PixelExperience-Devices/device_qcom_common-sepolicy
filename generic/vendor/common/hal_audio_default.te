@@ -27,6 +27,7 @@
 
 userdebug_or_eng(`
   allow hal_audio vendor_diag_device:chr_file rw_file_perms;
+  set_prop(hal_audio, vendor_audio_prop)
 ')
 
 allow hal_audio vendor_adsp_sleepmon_device:chr_file rw_file_perms;
@@ -87,6 +88,7 @@ allow hal_audio vendor_sysfs_sndcard:file rw_file_perms;
 
 # audio properties
 get_prop(hal_audio, vendor_audio_prop)
+set_prop(hal_audio, vendor_audio_ssr_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
