@@ -38,7 +38,6 @@ init_daemon_domain(vendor_sprhdd)
 allow vendor_sprhdd vendor_sprhdd_socket:dir w_dir_perms;
 allow vendor_sprhdd vendor_sprhdd_socket:sock_file create_file_perms;
 allow vendor_sprhdd vendor_sprhdd_socket:sock_file { read write };
-allow vendor_sprhdd self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write nlmsg_read };
 allow vendor_sprhdd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow vendor_sprhdd self:netlink_route_socket nlmsg_write;
 allow vendor_sprhdd self:netlink_socket create_socket_perms_no_ioctl;
@@ -60,11 +59,9 @@ allow vendor_sprhdd vendor_sprhdd_data_file:fifo_file { create open read getattr
 allow vendor_sprhdd vendor_sprhdd_data_file:dir create_dir_perms;
 allow vendor_sprhdd vendor_sprhdd_data_file:file create_file_perms;
 
-use_netutils(vendor_sprhdd)
-
 # Allow diag logging
 userdebug_or_eng(`
   r_dir_file(vendor_sprhdd, vendor_sysfs_diag)
 ')
 
-allow vendor_sprhdd self:capability { net_admin net_raw kill };
+allow vendor_sprhdd self:capability { kill };

@@ -46,3 +46,4 @@ allow dumpstate vendor_hal_neuralnetworks_default:process signal;
 
 binder_call(dumpstate, hal_light_default)
 binder_call(dumpstate, hal_power_default)
+binder_call(dumpstate, hal_dumpstate_default)

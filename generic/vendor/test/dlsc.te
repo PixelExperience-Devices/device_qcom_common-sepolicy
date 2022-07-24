@@ -55,17 +55,10 @@ allow vendor_dlsc vendor_sysfs_data:file r_file_perms;
 
 allow vendor_dlsc proc_net:file rw_file_perms;
 
-#Allow netutils usage
-domain_auto_trans(vendor_dlsc, netutils_wrapper_exec, netutils_wrapper)
-
-use_netutils(vendor_dlsc)
-
 #Allow diag logging
 userdebug_or_eng(`
   r_dir_file(vendor_dlsc, vendor_sysfs_diag)
 ')
-
-allow vendor_dlsc self:capability { net_admin net_raw };
 
 #Allow ifconfig execution
 allow vendor_dlsc { vendor_shell_exec vendor_toolbox_exec }:file rx_file_perms;
