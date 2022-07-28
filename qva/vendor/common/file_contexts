@@ -333,6 +333,7 @@
 /data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 /data/vendor/qvr(/.*)?                                              u:object_r:vendor_qvrd_vndr_data_file:s0
 /data/vendor/sxr(/.*)?                                              u:object_r:vendor_sxrd_vndr_data_file:s0
+/data/vendor/qms(/.*)?                                         u:object_r:vendor_qms_vndr_data_file:s0
 
 ###################################
 # persist files
