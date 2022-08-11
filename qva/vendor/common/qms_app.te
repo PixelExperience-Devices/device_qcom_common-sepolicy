@@ -29,5 +29,9 @@
 #  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-hal_client_domain(vendor_qtidataservices_app, vendor_hal_qms_qti)
+#
+type vendor_qms_app, domain;
+app_domain(vendor_qms_app)
+allow vendor_qms_app app_api_service:service_manager find;
+hal_client_domain(vendor_qms_app, vendor_hal_qms_qti)
+hal_client_domain(vendor_qms_app, vendor_hal_perf)
