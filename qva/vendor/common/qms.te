@@ -113,3 +113,4 @@ wakelock_use(vendor_qms)
 qtr_sdk_use(vendor_qms)
 allow vendor_qms vendor_qms_vndr_data_file:dir create_dir_perms;
 allow vendor_qms vendor_qms_vndr_data_file:file create_file_perms;
+get_prop(vendor_qms, vendor_qms_prop)
