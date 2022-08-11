@@ -68,3 +68,7 @@ vendor.qti.hardware.data.connectionfactory.IFactory/slot0 u:object_r:vendor_hal_
 vendor.qti.hardware.data.connectionfactory.IFactory/slot1 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.data.txpwrservice.ITxPwrService/default     u:object_r:vendor_hal_qms_service:s0
 vendor.qti.hardware.bttpi.IBtTpi/default     u:object_r:vendor_hal_bttpi_service:s0
+
+android.hardware.security.keymint.IKeyMintDevice/strongbox                u:object_r:hal_keymint_service:s0
+android.hardware.security.sharedsecret.ISharedSecret/strongbox            u:object_r:hal_sharedsecret_service:s0
+android.hardware.security.keymint.IRemotelyProvisionedComponent/strongbox u:object_r:hal_keymint_service:s0
