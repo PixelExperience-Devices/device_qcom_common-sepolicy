@@ -10,3 +10,5 @@ init_daemon_domain(vendor_dcfd)
 #Allow access to QESDK Policies
 qesdk_access(vendor_dcfd)
 
+#allow access to QMI
+allow vendor_dcfd self:qipcrtr_socket create_socket_perms_no_ioctl;
