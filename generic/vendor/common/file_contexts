@@ -428,6 +428,7 @@
 /data/vendor/imslogs(/.*)?             u:object_r:vendor_imsd_data_file:s0
 # audio_data_file
 /data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
+/data/vendor/audio_dsp(/.*)? u:object_r:vendor_audio_dsp_data_file:s0
 
 # /
 /tombstones                          u:object_r:rootfs:s0
