@@ -222,6 +222,7 @@ hal_client_domain($1, vendor_qccsyshal);
 #####################################
 # qesdk_access(clientdomain)
 define(`qesdk_access', `
+hal_client_domain($1, vendor_hal_qesdhal)
 unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
 userdebug_or_eng(`
   unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);

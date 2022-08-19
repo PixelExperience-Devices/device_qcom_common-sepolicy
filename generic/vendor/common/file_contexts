@@ -207,7 +207,6 @@
 /vendor/bin/hw/vendor.qti.hardware.limits@1.1-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
-/vendor/bin/sensors-qesdk       u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/qsap_sensors        u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
 /vendor/bin/ssr_diag            u:object_r:vendor_ssr_diag_exec:s0
@@ -297,6 +296,7 @@
 /vendor/bin/feature_enabler_client          u:object_r:vendor_feature_enabler_client_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:vendor_qdcm-ss_exec:s0
 /vendor/bin/perf_qesdk_client       u:object_r:vendor_perf_qesdk_exec:s0
+/vendor/bin/qsap_qapeservice        u:object_r:vendor_perf_qesdk_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
