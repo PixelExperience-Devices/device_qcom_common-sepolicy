@@ -30,19 +30,12 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_hal_qesdonehal_default, domain;
-type vendor_hal_qesdonehal_default_exec, exec_type, vendor_file_type, file_type;
-allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:sock_file w_file_perms;
+# Define Domain
+type vendor_qesdk_sampleclient, domain;
+type vendor_qesdk_sampleclient_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_qesdk_sampleclient)
 
-init_daemon_domain(vendor_hal_qesdonehal_default)
+# Should provide all policies for QESDK
+qesdk_access(vendor_qesdk_sampleclient)
 
-allow vendor_hal_qesdonehal_default devpts:chr_file rw_file_perms;
-allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:dir rw_dir_perms;
-allow vendor_hal_qesdonehal_default vendor_qesd_one_socket:sock_file create_file_perms;
-allow vendor_hal_qesdonehal_default vendor_qesd_one_token_data_file:dir create_dir_perms;
-allow vendor_hal_qesdonehal_default vendor_qesd_one_token_data_file:file create_file_perms;
-
-get_prop(vendor_hal_qesdonehal_default, vendor_qesdk_one_prop);
-set_prop(vendor_hal_qesdonehal_default, vendor_qesdk_one_prop);
-set_prop(vendor_hal_qesdonehal_default, ctl_start_prop);
-set_prop(vendor_hal_qesdonehal_default, ctl_stop_prop);
+get_prop(vendor_qesdk_sampleclient, hwservicemanager_prop)

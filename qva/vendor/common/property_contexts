@@ -36,6 +36,7 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 
 # qcc property
 vendor.qti.qdma.                             u:object_r:vendor_qcc_prop:s0
+vendor.qti.qcc.                              u:object_r:vendor_qcc_prop:s0
 persist.vendor.qtr.                          u:object_r:vendor_qtr_prop:s0
 
 ro.vendor.confqmaa            u:object_r:vendor_confqmaa:s0 exact bool
@@ -69,8 +70,12 @@ vendor.qti.nfc.                              u:object_r:vendor_nfc_nq_prop:s0
 vendor.qti.ese.                              u:object_r:vendor_ese_prop:s0
 
 # eSE-StrongBox
-ctl.start$vendor.ese-strongbox_4_1           u:object_r:vendor_ese_strongbox_prop:s0
+ctl.start$vendor.ese-strongbox_4_1          u:object_r:vendor_ese_strongbox_prop:s0
 ctl.stop$vendor.ese-strongbox_4_1           u:object_r:vendor_ese_strongbox_prop:s0
+ctl.start$vendor.keymint-strongbox          u:object_r:vendor_ese_strongbox_prop:s0
+ctl.stop$vendor.keymint-strongbox           u:object_r:vendor_ese_strongbox_prop:s0
+ctl.start$vendor.weaver_hal_service         u:object_r:vendor_ese_strongbox_prop:s0
+ctl.stop$vendor.weaver_hal_service          u:object_r:vendor_ese_strongbox_prop:s0
 
 #Disable SPU property
 vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:s0
@@ -152,3 +157,6 @@ ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
 
 #qesdk ready property
 vendor.qesdk.ready                           u:object_r:vendor_qesdk_ready_prop:s0
+
+#qms
+persist.vendor.data.qms.                     u:object_r:vendor_qms_prop:s0
