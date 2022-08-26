@@ -50,3 +50,4 @@ allowxperm vendor_ssgtzd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctl
 
 #Allow access to qseecom DMABUF device
 allow vendor_ssgtzd vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+vndbinder_use(vendor_ssgtzd)
