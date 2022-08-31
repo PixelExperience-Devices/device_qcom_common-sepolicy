@@ -632,3 +632,6 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+# CHRE
+/vendor/bin/hw/android\.hardware\.contexthub-service\.qmi                             u:object_r:hal_contexthub_default_exec:s0

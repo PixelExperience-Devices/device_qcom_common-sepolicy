@@ -25,5 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow context hub HAL to communicate with daemon via socket
-unix_socket_connect(hal_contexthub, vendor_chre, vendor_chre)
+allow hal_contexthub_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow hal_contexthub_default vendor_qdsp_device:chr_file r_file_perms;
+allow hal_contexthub_default vendor_xdsp_device:chr_file r_file_perms;
+allow hal_contexthub_default vendor_dsp_device:chr_file r_file_perms;
+get_prop(hal_contexthub_default, vendor_adsprpc_prop)
+allow hal_contexthub_default vendor_adsprpc_prop:file { map open read };
+allow hal_contexthub_default dmabuf_system_heap_device:chr_file r_file_perms;
+
+wakelock_use(hal_contexthub_default)
