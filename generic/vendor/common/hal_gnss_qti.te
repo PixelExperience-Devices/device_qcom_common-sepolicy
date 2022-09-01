@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 # generic/vendor/common/hal_gnss_qti.te - generic sepolicy rules for vendor_location hidl
 
 type vendor_hal_gnss_qti, domain;
@@ -49,15 +52,16 @@ allow vendor_hal_gnss_qti vendor_location:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_xtra_daemon:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_lowi_server:unix_dgram_socket sendto;
 
+# /dev/socket/qsap_location
+allow vendor_hal_gnss_qti vendor_qsap_location_socket:sock_file create_file_perms;
+allow vendor_hal_gnss_qti vendor_qsap_location_socket:dir rw_dir_perms;
+
 # allow reading /sys/bus/mhi/devices/.../time_us files, this files hold the
 # time offset between local and remote for dual SoC architectures
 allow vendor_hal_gnss_qti vendor_sysfs_mhi:file r_file_perms;
 
 # Allow Gnss HAL to get updates from health hal
 hal_client_domain(vendor_hal_gnss_qti, hal_health)
-
-# Allow Gnss HAL to access QESDK
-qesdk_access(vendor_hal_gnss_qti)
 
 # allows Gnss HAL to access ssgtzd socket
 unix_socket_connect(vendor_hal_gnss_qti, vendor_ssgtzd, vendor_ssgtzd)

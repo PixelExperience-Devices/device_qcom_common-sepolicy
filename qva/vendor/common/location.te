@@ -25,9 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 # qva/vendor/common/location.te - sepolicy rules for qti value added location modules
 
 userdebug_or_eng(`
   # stop or kill loc_launcher, it will send signal Sigkill or Sigstop to child processes.
-  allow vendor_location {vendor_location_slim_daemon vendor_location_edgnss_daemon vendor_location_engine_service vendor_location_xtwifi_client vendor_location_xtwifi_inetagent}:process { signal sigkill sigstop };
+  allow vendor_location {vendor_location_slim_daemon vendor_location_edgnss_daemon vendor_qsap_location vendor_location_engine_service vendor_location_xtwifi_client vendor_location_xtwifi_inetagent}:process { signal sigkill sigstop };
 ')
