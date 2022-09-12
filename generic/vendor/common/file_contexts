@@ -129,6 +129,7 @@
 /dev/socket/port-bridge(/.*)?                   u:object_r:vendor_port-bridge_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:vendor_dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:vendor_location_socket:s0
+/dev/socket/qsap_location(/.*)?                 u:object_r:vendor_qsap_location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:vendor_wifihal_socket:s0
 /dev/socket/pps                                 u:object_r:vendor_pps_socket:s0
 /dev/socket/notify-topology                     u:object_r:vendor_notify-topology_socket:s0
@@ -331,6 +332,9 @@
 /vendor/lib(64)?/libGLESv1_CM_adreno\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libGLESv2_adreno\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libadreno_app_profiles\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgpudataproducer\.so        u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/egl/libq3dtools_esx\.so       u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/egl/libVkLayer_ADRENO_qprofiler\.so  u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/libdrmutils\.so           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrm\.so                u:object_r:same_process_hal_file:s0

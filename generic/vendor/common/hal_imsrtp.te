@@ -45,6 +45,7 @@ allow vendor_hal_imsrtp self:capability net_bind_service;
 
 allow vendor_hal_imsrtp ion_device:chr_file r_file_perms;
 allow vendor_hal_imsrtp vendor_sysfs_data:file r_file_perms;
+allow vendor_hal_imsrtp logdr_socket:sock_file write;
 r_dir_file(vendor_hal_imsrtp, vendor_sysfs_diag)
 
 get_prop(vendor_hal_imsrtp, vendor_ims_prop)
