@@ -224,6 +224,10 @@ hal_client_domain($1, vendor_qccsyshal);
 define(`qesdk_access', `
 hal_client_domain($1, vendor_hal_qesdhal)
 unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
+allow $1 vendor_hal_qesdhal_default:file read;
+allow $1 vendor_hal_qesdhal_default:lnk_file read;
+allow $1 vendor_hal_qesdhal_default:dir search;
+allow $1 self:netlink_generic_socket create_socket_perms_no_ioctl;
 userdebug_or_eng(`
   unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);
   get_prop($1, vendor_qesdk_one_prop);
