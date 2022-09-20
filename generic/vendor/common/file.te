@@ -136,6 +136,7 @@ type vendor_cnd_socket, file_type;
 type vendor_chre_socket, file_type;
 type vendor_hal_bootctl_socket, file_type;
 type vendor_location_socket, file_type;
+type vendor_qsap_location_socket, file_type;
 type vendor_wifihal_socket, file_type;
 type vendor_pps_socket, file_type;
 

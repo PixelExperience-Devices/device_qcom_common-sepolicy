@@ -62,6 +62,7 @@
 
 # dev nodes
 /dev/btpower                                    u:object_r:vendor_bt_device:s0
+/dev/btfmslim                                   u:object_r:vendor_bt_device:s0
 /dev/diag                                       u:object_r:vendor_diag_device:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
@@ -130,6 +131,7 @@
 /dev/socket/port-bridge(/.*)?                   u:object_r:vendor_port-bridge_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:vendor_dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:vendor_location_socket:s0
+/dev/socket/qsap_location(/.*)?                 u:object_r:vendor_qsap_location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:vendor_wifihal_socket:s0
 /dev/socket/pps                                 u:object_r:vendor_pps_socket:s0
 /dev/socket/notify-topology                     u:object_r:vendor_notify-topology_socket:s0

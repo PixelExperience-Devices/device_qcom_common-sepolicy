@@ -29,7 +29,7 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 
-type vendor_hal_poweroptservice_qti, domain;
+type vendor_hal_poweroptservice_qti, domain, mlstrustedsubject;
 #mark as hal server domain
 hal_server_domain(vendor_hal_poweroptservice_qti, vendor_hal_poweroptservice)
 
@@ -64,3 +64,7 @@ get_prop(vendor_hal_poweroptservice_qti, vendor_soc_name_prop)
 
 allow vendor_hal_poweroptservice_qti vendor_pm_data_file:dir create_dir_perms;
 allow vendor_hal_poweroptservice_qti vendor_pm_data_file:file create_file_perms;
+allow vendor_hal_poweroptservice_qti cgroup:file r_file_perms;
+allow vendor_hal_poweroptservice_qti proc:file r_file_perms;
+allow vendor_hal_poweroptservice_qti {appdomain}:process getpgid;
+r_dir_file(vendor_hal_poweroptservice_qti, appdomain);
