@@ -33,3 +33,6 @@ persist.vendor.debug.wfd.                    u:object_r:vendor_wfd_vendor_debug_
 
 #CNE IWLAN Logging
 persist.vendor.iwlan.logging.logcat          u:object_r:vendor_cnd_prop:s0
+
+#IPA AGENT for SPEARHEAD Diag Logging
+ctl.vendor.ipa_lnx_agent   u:object_r:vendor_ipa_lnx_agent_prop:s0
