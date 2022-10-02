@@ -52,6 +52,7 @@ neverallow {
   -vendor_qtidataservices_app
   -vendor_hal_dpmQmiMgr
   -vendor_qms
+  -vendor_qvrd_vndr
   userdebug_or_eng(` -vendor_hal_diaghal')
   userdebug_or_eng(` -vendor_qtiloopback_native')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
