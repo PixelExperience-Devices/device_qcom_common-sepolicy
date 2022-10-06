@@ -64,6 +64,9 @@ allow hal_audio_default vendor_agm_device:chr_file rw_file_perms;
 #Allow access to dmabuf
 allow hal_audio_default dmabuf_system_heap_device:chr_file r_file_perms;
 
+#Allow access to uncached dmabuf
+allow hal_audio_default vendor_dmabuf_system_uncached_heap_device:chr_file r_file_perms;
+
 #Allow access to dmabuf_cma
 allow hal_audio_default vendor_dmabuf_audio_ml_heap_device:chr_file r_file_perms;
 
