@@ -223,6 +223,9 @@
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name     u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/name    u:object_r:vendor_sysfs_ssr:s0
 
+# mmc device type
+/sys/devices/platform/soc/4784000.sdhci/mmc_host/mmc1/mmc1:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+
 #subsys nodes
 /sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/ab00000.remoteproc-lpass/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
