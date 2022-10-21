@@ -210,6 +210,14 @@
 /sys/devices/platform/soc/4744000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb                                              u:object_r:vendor_sysfs_mmc_host:s0
 
+# ufs device type
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/read_ahead_kb    u:object_r:vendor_sysfs_sd:s0
+
 /(vendor|system/vendor)/bin/init\.qti\.early_init\.sh          u:object_r:vendor_qti_init_shell_exec:s0
 
 ###################################
