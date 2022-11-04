@@ -66,9 +66,6 @@ allow vendor_location_slim_daemon self:qipcrtr_socket create_socket_perms_no_ioc
 
 allow vendor_location_slim_daemon fwk_sensor_hwservice:hwservice_manager find;
 
-## send to /dev/socket/location/mq/ - inet-agent-tdp-dl, inet-agent-cs
-allow vendor_location_slim_daemon vendor_location_xtwifi_inetagent:unix_dgram_socket sendto;
-
 ## send to /dev/socket/location/mq/MODEM-CS
 allow vendor_location_slim_daemon vendor_location_xtwifi_client:unix_dgram_socket sendto;
 
