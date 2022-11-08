@@ -65,3 +65,5 @@ net_domain(vendor_location_edgnss_daemon)
 
 # IPC Router
 allow vendor_location_edgnss_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+crash_dump_fallback(vendor_location_edgnss_daemon)
