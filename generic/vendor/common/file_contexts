@@ -129,6 +129,7 @@
 /dev/socket/netmgr(/.*)?                        u:object_r:vendor_netmgrd_socket:s0
 /dev/socket/shsusrd(/.*)?                       u:object_r:vendor_shsusrd_socket:s0
 /dev/socket/port-bridge(/.*)?                   u:object_r:vendor_port-bridge_socket:s0
+/dev/socket/tlpd(/.*)?                          u:object_r:vendor_tlpd_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:vendor_dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:vendor_location_socket:s0
 /dev/socket/qsap_location(/.*)?                 u:object_r:vendor_qsap_location_socket:s0
@@ -235,6 +236,8 @@
 /vendor/bin/qmipriod            u:object_r:vendor_qmipriod_exec:s0
 /vendor/bin/shsusrd             u:object_r:vendor_shsusrd_exec:s0
 /vendor/bin/port-bridge         u:object_r:vendor_port-bridge_exec:s0
+/vendor/bin/tlpd                u:object_r:vendor_tlpd_exec:s0
+/vendor/bin/dlsc                u:object_r:vendor_dlsc_exec:s0
 /vendor/bin/qti                 u:object_r:vendor_qti_exec:s0
 /vendor/bin/qsap_voiceui        u:object_r:vendor_vui_dmgr_exec:s0
 ## Context for location features - start
@@ -423,6 +426,8 @@
 /data/vendor/ipa(/.*)?                 u:object_r:vendor_ipa_vendor_data_file:s0
 /data/vendor/sensors(/.*)?             u:object_r:vendor_sensors_vendor_data_file:s0
 /data/vendor/port_bridge(/.*)?         u:object_r:vendor_port_bridge_data_file:s0
+/data/vendor/tlpd(/.*)?                u:object_r:vendor_tlpd_data_file:s0
+/data/vendor/dlsc(/.*)?                u:object_r:vendor_dlsc_data_file:s0
 /data/vendor/tloc(/.*)?                u:object_r:vendor_tlocd_data_file:s0
 /data/vendor/connectivity(/.*)?        u:object_r:vendor_cnd_data_file:s0
 /data/vendor/misc/qsee(/.*)?           u:object_r:vendor_data_qsee_file:s0

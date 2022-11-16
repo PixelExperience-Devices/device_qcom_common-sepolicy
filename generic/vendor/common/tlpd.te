@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -29,39 +29,37 @@
 # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type vendor_sprhdd, domain;
-type vendor_sprhdd_exec, exec_type, vendor_file_type, file_type;
 
-net_domain(vendor_sprhdd)
-init_daemon_domain(vendor_sprhdd)
+type vendor_tlpd, domain;
+type vendor_tlpd_exec, exec_type, vendor_file_type, file_type;
 
-allow vendor_sprhdd vendor_sprhdd_socket:dir w_dir_perms;
-allow vendor_sprhdd vendor_sprhdd_socket:sock_file create_file_perms;
-allow vendor_sprhdd vendor_sprhdd_socket:sock_file { read write };
-allow vendor_sprhdd self:netlink_generic_socket create_socket_perms_no_ioctl;
-allow vendor_sprhdd self:netlink_route_socket nlmsg_write;
-allow vendor_sprhdd self:netlink_socket create_socket_perms_no_ioctl;
-allow vendor_sprhdd self:socket create_socket_perms;
-allow vendor_sprhdd self:qipcrtr_socket create_socket_perms_no_ioctl;
-allowxperm vendor_sprhdd self:socket ioctl msm_sock_ipc_ioctls;
-allowxperm vendor_sprhdd self:udp_socket ioctl priv_sock_ioctls;
-allow vendor_sprhdd self:tipc_socket { create_socket_perms_no_ioctl };
+net_domain(vendor_tlpd)
+init_daemon_domain(vendor_tlpd)
 
-allow vendor_sprhdd vendor_sprhdd:unix_stream_socket connectto;
+allow vendor_tlpd vendor_tlpd_socket:dir w_dir_perms;
+allow vendor_tlpd vendor_tlpd_socket:sock_file create_file_perms;
+allow vendor_tlpd self:socket create_socket_perms;
+allow vendor_tlpd self:qipcrtr_socket create_socket_perms_no_ioctl;
+allowxperm vendor_tlpd self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm vendor_tlpd self:udp_socket ioctl priv_sock_ioctls;
+allow vendor_tlpd self:tipc_socket { create_socket_perms_no_ioctl };
 
-allow vendor_sprhdd sysfs_net:dir r_dir_perms;
-allow vendor_sprhdd sysfs_net:file rw_file_perms;
-allow vendor_sprhdd vendor_sysfs_data:file r_file_perms;
+allow vendor_tlpd vendor_tlpd:unix_stream_socket connectto;
 
-allow vendor_sprhdd vendor_sprhdd_exec:file execute_no_trans;
+allow vendor_tlpd sysfs_net:dir r_dir_perms;
+allow vendor_tlpd sysfs_net:file rw_file_perms;
+allow vendor_tlpd vendor_sysfs_data:file r_file_perms;
 
-allow vendor_sprhdd vendor_sprhdd_data_file:fifo_file { create open read getattr write };
-allow vendor_sprhdd vendor_sprhdd_data_file:dir create_dir_perms;
-allow vendor_sprhdd vendor_sprhdd_data_file:file create_file_perms;
+allow vendor_tlpd vendor_tlpd_exec:file execute_no_trans;
+
+allow vendor_tlpd vendor_tlpd_data_file:fifo_file create_file_perms;
+
+allow vendor_tlpd vendor_tlpd_data_file:dir create_dir_perms;
+allow vendor_tlpd vendor_tlpd_data_file:file create_file_perms;
 
 # Allow diag logging
 userdebug_or_eng(`
-  r_dir_file(vendor_sprhdd, vendor_sysfs_diag)
+  r_dir_file(vendor_tlpd, vendor_sysfs_diag)
 ')
 
-allow vendor_sprhdd self:capability { kill };
+allow vendor_tlpd self:capability { kill };
