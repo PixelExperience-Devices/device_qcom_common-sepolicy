@@ -242,5 +242,5 @@ userdebug_or_eng(`
 define(`tlpd_socket', `
 allow $1 vendor_tlpd_socket:dir r_dir_perms;
 unix_socket_connect($1, vendor_tlpd, vendor_tlpd)
-allow $1 vendor_tlpd_socket:sock_file { read };
+allow $1 vendor_tlpd_socket:sock_file { read write };
 ')
