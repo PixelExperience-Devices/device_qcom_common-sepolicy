@@ -138,6 +138,7 @@
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/st21nfc                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
+/dev/bt_cp_ctrl                                 u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
 /dev/socket/qcrild(/.*)?                        u:object_r:vendor_rild_socket:s0
@@ -631,3 +632,6 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+# CHRE
+/vendor/bin/hw/android\.hardware\.contexthub-service\.qmi                             u:object_r:hal_contexthub_default_exec:s0

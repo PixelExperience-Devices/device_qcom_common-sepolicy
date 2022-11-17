@@ -57,6 +57,7 @@ allow vendor_location_xtra_daemon vendor_hal_gnss_qti:unix_dgram_socket sendto;
 hwbinder_use(vendor_location_xtra_daemon)
 get_prop(vendor_location_xtra_daemon, hwservicemanager_prop)
 binder_call(vendor_location_xtra_daemon, system_server)
+binder_call(vendor_location_xtra_daemon, vendor_qms)
 
 # allows shell execute xtra-daemon in userdebug mode.
 userdebug_or_eng(`
