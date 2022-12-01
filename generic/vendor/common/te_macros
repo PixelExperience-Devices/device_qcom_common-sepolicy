@@ -232,3 +232,15 @@ userdebug_or_eng(`
   get_prop($1, vendor_qesdk_one_prop);
   allow $1 vendor_qesd_one_socket:dir r_dir_perms; ')
 ')
+
+#####################################
+# tlpd_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the tlpd domain.
+# Also allow the client domain to remove
+# its own socket.
+define(`tlpd_socket', `
+allow $1 vendor_tlpd_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_tlpd, vendor_tlpd)
+allow $1 vendor_tlpd_socket:sock_file { read write };
+')

@@ -82,6 +82,7 @@ neverallow { domain
 - vendor_audioadsprpcd
 - vendor_chre
 - vendor_dspservice
+- hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
 userdebug_or_eng(` -vendor_usta_app')

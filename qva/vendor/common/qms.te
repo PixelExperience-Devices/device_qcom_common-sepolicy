@@ -98,6 +98,12 @@ unix_socket_send(vendor_qms, wpa, hal_wifi_supplicant)
 allow vendor_qms wpa_data_file:dir w_dir_perms;
 allow vendor_qms wpa_data_file:sock_file create_file_perms;
 
+allow vendor_qms firmware_file:dir r_dir_perms;
+allow vendor_qms firmware_file:file r_file_perms;
+
+# Allow vendor_qms to read vendor_soc_model_prop
+get_prop(vendor_qms, vendor_soc_model_prop);
+
 #communicating with hostapd for sending commands/listening to events
 allow vendor_qms hostapd_data_file:dir rw_dir_perms;
 allow vendor_qms hostapd_data_file:sock_file create_file_perms;

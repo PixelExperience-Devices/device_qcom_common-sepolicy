@@ -22,3 +22,4 @@ allow vendor_qsap_location vendor_hal_gnss_qti:unix_dgram_socket sendto;
 userdebug_or_eng(`
   allow shell vendor_qsap_location_exec:file rx_file_perms;
 ')
+crash_dump_fallback(vendor_qsap_location)
