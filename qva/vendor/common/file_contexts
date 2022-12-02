@@ -236,6 +236,7 @@
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:vendor_persist_vpp_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:vendor_persist_hvdcp_file:s0
+/mnt/vendor/persist/spudc(/.*)?       u:object_r:vendor_persist_spudc_file:s0
 
 # spunvm partition
 /mnt/vendor/spunvm(/.*)?              u:object_r:vendor_spunvm_file:s0
