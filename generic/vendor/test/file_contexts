@@ -99,14 +99,9 @@
 /(vendor|system/vendor)/bin/InstallKeybox                       u:object_r:vendor_sectest_exec:s0
 /(vendor|system/vendor)/bin/tracing_config\.sh        u:object_r:vendor_smtrace_tracing_exec:s0
 
-# Sprhd
-/vendor/bin/sprhdd                                              u:object_r:vendor_sprhdd_exec:s0
-/vendor/bin/dlsc                                                u:object_r:vendor_dlsc_exec:s0
+# TLPD
 /vendor/bin/ipa_lnx_agent                                       u:object_r:vendor_ipa_lnx_agent_exec:s0
 /dev/ipa_lnx_stats_ioctl                                        u:object_r:vendor_ipa_lnx_agent_device:s0
-/dev/socket/sprhd(/.*)?                                         u:object_r:vendor_sprhdd_socket:s0
-/data/vendor/sprhd(/.*)?                                        u:object_r:vendor_sprhdd_data_file:s0
-/data/vendor/dlsc(/.*)?                                         u:object_r:vendor_dlsc_data_file:s0
 
 #Authentication and FIDO
 /(vendor|system/vendor)/bin/sampleauthdaemon    u:object_r:vendor_fidotest_exec:s0

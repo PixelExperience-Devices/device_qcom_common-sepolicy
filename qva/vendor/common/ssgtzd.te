@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # vendor_ssgtzd - SSG TZ Daemon
 type vendor_ssgtzd, domain, mlstrustedsubject;
 type vendor_ssgtzd_exec, exec_type, vendor_file_type, file_type;
@@ -51,3 +55,8 @@ allowxperm vendor_ssgtzd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctl
 #Allow access to qseecom DMABUF device
 allow vendor_ssgtzd vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 vndbinder_use(vendor_ssgtzd)
+
+#Allow ssgtzd to access servicemanager
+binder_call(vendor_ssgtzd, servicemanager)
+#Allow ssgtzd to access vndbinder_use
+qtr_sdk_use(vendor_ssgtzd)
