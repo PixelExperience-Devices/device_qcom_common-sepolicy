@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2022, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,24 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-get_prop(vendor_dataservice_app, vendor_cnd_prop)
+type vendor_ims_dcservice, domain;
+type vendor_ims_dcservice_exec, exec_type, vendor_file_type, file_type;
 
-allow vendor_dataservice_app vendor_sysfs_data:file r_file_perms;
+init_daemon_domain(vendor_ims_dcservice)
+net_domain(vendor_ims_dcservice)
 
-hal_client_domain(vendor_dataservice_app , vendor_hal_datafactory_qti)
+hal_server_domain_bypass(vendor_ims_dcservice, vendor_hal_dcservice_qti)
+hal_attribute_service(vendor_hal_dcservice_qti, vendor_hal_imsdc_service)
+binder_call(vendor_hal_dcservice_qti_server, servicemanager)
+binder_call(vendor_hal_dcservice_qti_client, vendor_hal_dcservice_qti_server)
+binder_call(vendor_hal_dcservice_qti_server, vendor_hal_dcservice_qti_client)
 
-hal_client_domain(vendor_dataservice_app , vendor_hal_perf)
+#allow ims_dataservice_daemon to connect to server socket hosted in imsdaemon
+unix_socket_connect(vendor_ims_dcservice, vendor_ims_service, vendor_ims_service)
 
-# dataservice_app is a client of ImsFactory HAL
-hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)
+allowxperm vendor_ims_dcservice self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
 
-# dataservice_app is a client of ImsDataService stable AIDL
-hal_client_domain(vendor_dataservice_app, vendor_hal_dcservice_qti)
+#diag
+userdebug_or_eng(`
+    diag_use(vendor_ims_dcservice)
+')

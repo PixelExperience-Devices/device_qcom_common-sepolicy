@@ -248,7 +248,8 @@
 /vendor/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /vendor/bin/ims_rtp_daemon      u:object_r:vendor_hal_imsrtp_exec:s0
 /vendor/bin/mstatdaemon			u:object_r:vendor_hal_mstatservice_exec:s0
-/vendor/bin/imsdaemon           u:object_r:vendor_ims_service_exec:s0
+/vendor/bin/imsdaemon                        u:object_r:vendor_ims_service_exec:s0
+/vendor/bin/ims-dataservice-daemon           u:object_r:vendor_ims_dcservice_exec:s0
 /vendor/bin/ipacm               u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/ipacm-diag          u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/cnd                 u:object_r:vendor_cnd_exec:s0
