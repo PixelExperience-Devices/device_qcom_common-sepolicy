@@ -102,3 +102,8 @@ set_prop(hal_audio, vendor_audio_ssr_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
+
+#Allow for property access
+userdebug_or_eng(`
+get_prop(hal_audio, vendor_pd_locater_dbg_prop)
+')
