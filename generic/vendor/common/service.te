@@ -32,3 +32,4 @@
 
 type vendor_hal_vnddisplayconfig_service, vendor_service, protected_service, service_manager_type;
 type vendor_hal_telephony_service2, vendor_service, protected_service, service_manager_type;
+type vendor_hal_imsdc_service,        vendor_service, protected_service, service_manager_type;

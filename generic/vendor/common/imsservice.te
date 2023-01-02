@@ -65,7 +65,7 @@ allow vendor_ims_service vendor_hal_cne_hwservice:hwservice_manager find;
 
 hal_client_domain(vendor_ims_service , vendor_hal_datafactory_qti)
 
-#add IUceService, IImsCmServiceService, IService and IImsFactory to HIDL interface
+#add IService and IImsFactory to HIDL interface
 
 #hal server domain for ims_service
 hal_server_domain_bypass(vendor_ims_service, vendor_hal_imsfactory)
@@ -74,6 +74,7 @@ binder_call(vendor_hal_imsfactory_server, vendor_hal_imsfactory_client)
 hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imsfactory_hwservice)
 hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imsrcsd_hwservice)
 hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imscallinfo_hwservice)
+
 
 # imsdaemon needs read/write access to devpts
 allow vendor_ims_service devpts:chr_file rw_file_perms;

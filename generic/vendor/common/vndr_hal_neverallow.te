@@ -48,6 +48,7 @@ neverallow {
   -vendor_hal_fstman
   -vendor_wifidisplayhalservice_qti
   -vendor_ims_service
+  -vendor_ims_dcservice
   -vendor_dpmd_vndr
   -vendor_qtidataservices_app
   -vendor_hal_dpmQmiMgr
