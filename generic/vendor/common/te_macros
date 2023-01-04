@@ -157,7 +157,7 @@ get_prop($1, hwservicemanager_prop)
 typeattribute $1 $2_server;
 typeattribute $1 $2;
 typeattribute $1 vendor_halserverdomain;
-neverallow { vendor_halserverdomain - netdomain userdebug_or_eng(` -vendor_qtiloopback_native') - vendor_wigignpt - vendor_qms } hwservicemanager:binder { call transfer };
+neverallow { vendor_halserverdomain - netdomain userdebug_or_eng(` -vendor_qtiloopback_native') - vendor_wigignpt - vendor_qms - vendor_ims_dcservice} hwservicemanager:binder { call transfer };
 ')
 
 #####################################

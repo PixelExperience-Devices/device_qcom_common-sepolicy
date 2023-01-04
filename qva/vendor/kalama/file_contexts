@@ -69,3 +69,18 @@
 /sys/firmware/devicetree/base/memory/ddr_device_type                               u:object_r:vendor_sysfs_ddr:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/spm_lvl                u:object_r:vendor_sysfs_scsi_host:s0
+
+#perf
+/sys/module/cpu_boost(/.*)?                                         u:object_r:vendor_sysfs_cpu_boost:s0
+/sys/module/msm_performance(/.*)?                                   u:object_r:vendor_sysfs_msm_perf:s0
+/sys/module/process_reclaim(/.*)?                                   u:object_r:vendor_sysfs_process_reclaim:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:vendor_sysfs_vmpressure:s0
+
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_config               u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:vendor_sysfs_wigig:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/sku_version       u:object_r:vendor_sysfs_sku:s0
