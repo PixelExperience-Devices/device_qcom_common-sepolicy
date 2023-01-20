@@ -88,3 +88,7 @@ allow vendor_location_xtwifi_client hal_wifi_default:unix_dgram_socket sendto;
 allow vendor_location_xtwifi_client vendor_location_slim_daemon:unix_dgram_socket sendto;
 
 crash_dump_fallback(vendor_location_xtwifi_client)
+
+# allows xtwifi-client to access ssgtzd socket
+unix_socket_connect(vendor_location_xtwifi_client, vendor_ssgtzd, vendor_ssgtzd)
+
