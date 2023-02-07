@@ -79,6 +79,7 @@ allow vendor_qms vendor_qms:{
 }create_socket_perms_no_ioctl;
 
 allow vendor_qms self:udp_socket create_socket_perms;
+allowxperm vendor_qms self:udp_socket ioctl priv_sock_ioctls;
 hal_server_domain_bypass(vendor_qms, vendor_hal_qms_qti)
 hal_attribute_service(vendor_hal_qms_qti, vendor_hal_qms_service)
 binder_call(vendor_hal_qms_qti_server, servicemanager)
