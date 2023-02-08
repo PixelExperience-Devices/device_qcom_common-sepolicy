@@ -89,98 +89,32 @@
 # Block device for hal_bootctl
 /dev/block/sdf                                                      u:object_r:boot_block_device:s0
 
-# Same process file
-/vendor/lib(64)?/hw/gralloc\.lahaina\.so                               u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.lahaina\.so                                u:object_r:same_process_hal_file:s0
-
 # limits Partitions
 /dev/block/platform/soc/1d84000.ufshc/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
-
-#subsys nodes
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/abb0000.qcom,cvpss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/abb0000.qcom,cvpss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/abb0000.qcom,evass/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/abb0000.qcom,evass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/aab0000.qcom,venus/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/17300000.qcom,lpass/subsys[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/17300000.qcom,lpass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/98900000.qcom,turing/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/98900000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/3700000.qcom,lpass/subsys[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/3700000.qcom,lpass/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/a300000.qcom,turing/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/a300000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/5c00000.qcom,ssc/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/5c00000.qcom,ssc/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/188101c.qcom,spss/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/188101c.qcom,spss/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #Display nodes
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
 
-# Feature configs
-/sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
-
 # mmc device type
 /sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc0/mmc0:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 
-# VM Specific
-/vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
-
-# vendor_sysfs_devfreq
-/sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:vendor_sysfs_devfreq:s0
-
-/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:vendor_sysfs_graphics:s0
-/sys/module/drm/parameters/vblankoffdelay                           u:object_r:vendor_sysfs_graphics:s0
-/sys/module/msm_drm/parameters/dsi_display([0-1])                   u:object_r:vendor_sysfs_disp_boot_param:s0
-/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
+#VM Specific
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object
+_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:objec
+t_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphic:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/caps           u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cci/[a-f0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:vendor_sysfs_scsi_host:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/auto_hibern8           u:object_r:vendor_sysfs_scsi_host:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:vendor_sysfs_scsi_host:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/host0/target0:0:0/0:0:0:[0-9]+/scsi_generic(/.*)?     u:object_r:vendor_sysfs_scsi_target:s0
 
 # VM Neuron block device mapping node
-/sys/devices/platform/soc/soc:qcom,svm_neuron_block/soc:qcom,svm_neuron_block:application/blk_name  u:object_r:vendor_sysfs_svm_neuron:s0
-
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
