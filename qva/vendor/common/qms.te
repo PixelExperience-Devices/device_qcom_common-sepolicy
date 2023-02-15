@@ -91,7 +91,7 @@ hal_client_domain(vendor_qms,hal_wifi_hostapd)
 hal_client_domain(vendor_qms,hal_wifi_supplicant)
 hal_client_domain(vendor_qms, hal_bluetooth)
 
-add_service(vendor_qms, vendor_qhdcservice)
+hal_attribute_service(vendor_hal_qms_qti, vendor_qhdcservice)
 net_domain(vendor_qms)
 
 #glink
