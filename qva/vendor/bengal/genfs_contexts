@@ -281,6 +281,11 @@ genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-000c/4a84000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/iio:device2 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-000c/4a84000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/iio:device3 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-000c/4a84000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/iio:device4 u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-0034/4a84000.i2c:qcom,smb1394@34:qcom,div2_cp_pry/iio:device0 u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-0034/4a84000.i2c:qcom,smb1394@34:qcom,div2_cp_pry/iio:device1 u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-0034/4a84000.i2c:qcom,smb1394@34:qcom,div2_cp_pry/iio:device2 u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-0034/4a84000.i2c:qcom,smb1394@34:qcom,div2_cp_pry/iio:device3 u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-0/0-0034/4a84000.i2c:qcom,smb1394@34:qcom,div2_cp_pry/iio:device4 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qpnp,qg/iio:device0 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qpnp,qg/iio:device1 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qpnp,qg/iio:device2 u:object_r:vendor_sysfs_battery_supply:s0

@@ -52,3 +52,6 @@ type vendor_qg_device, dev_type;
 #define qvr external sensor device
 type vendor_qvr_external_sensor_device, dev_type;
 type vendor_qvr_hidraw_device, dev_type;
+
+type vendor_qmc_dma_device, dev_type;
+type vendor_qmc_cma_device, dev_type;
