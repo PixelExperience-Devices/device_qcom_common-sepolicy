@@ -172,5 +172,8 @@ allow vendor_qms vendor_qms_vndr_data_file:dir create_dir_perms;
 allow vendor_qms vendor_qms_vndr_data_file:file create_file_perms;
 get_prop(vendor_qms, vendor_qms_prop)
 
+allow vendor_qms vendor_sysfs_battery_supply:dir search;
+allow vendor_qms vendor_sysfs_battery_supply:file { open read };
+
 # collect tombstone
 crash_dump_fallback(vendor_qms);
