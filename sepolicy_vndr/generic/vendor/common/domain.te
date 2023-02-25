@@ -85,6 +85,7 @@ neverallow { domain
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
+- vendor_hal_neuralnetworks_default
 userdebug_or_eng(` -vendor_usta_app')
 userdebug_or_eng(` -vendor_ustaservice_app')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
@@ -95,21 +96,17 @@ neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~
 neverallow { domain
 - init
 - vendor_init
-- appdomain
 - ueventd
-- mediacodec
 - vendor_adsprpcd
 - vendor_cdsprpcd
 - vendor_audioadsprpcd
-- hal_camera_default
 - vendor_chre
+- vendor_hal_neuralnetworks_default
 - vendor_qvrd_vndr
 - vendor_vppservice
 - vendor_thermal-engine
-- vendor_dspservice
+- hal_camera_default
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
-} vendor_qdsp_device:chr_file *;
-neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
+} vendor_qdsp_device:chr_file ~{r_file_perms};
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
-neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
 
