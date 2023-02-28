@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -26,24 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# qva/vendor/common/hal_gnss_qti.te - generic sepolicy rules for qti value added
-# location hidl
-
-# allow socket communication with location daemons
-allow vendor_hal_gnss_qti vendor_location_engine_service:unix_dgram_socket sendto;
-allow vendor_hal_gnss_qti vendor_location_edgnss_daemon:unix_dgram_socket sendto;
-allow vendor_hal_gnss_qti vendor_qsap_location:unix_dgram_socket sendto;
-allow vendor_hal_gnss_qti vendor_location_slim_daemon:unix_dgram_socket sendto;
-allow vendor_hal_gnss_qti vendor_location_xtwifi_client:unix_dgram_socket sendto;
-
-userdebug_or_eng(`
-  get_prop(vendor_hal_gnss_qti, vendor_pd_locater_dbg_prop)
-')
-
-allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
-
-# qhdc sdk
-hal_client_domain(vendor_hal_gnss_qti, vendor_hal_qms_qti)
+#for vendor_qti_init_shell to configfs permission
+allow vendor_qti_init_shell configfs:dir { create w_dir_perms };
+allow vendor_qti_init_shell configfs:file { create };
+allow vendor_qti_init_shell configfs:lnk_file { create };
