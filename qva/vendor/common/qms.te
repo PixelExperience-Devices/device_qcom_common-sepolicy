@@ -79,6 +79,7 @@ allow vendor_qms vendor_qms:{
 }create_socket_perms_no_ioctl;
 
 allow vendor_qms self:udp_socket create_socket_perms;
+allowxperm vendor_qms self:udp_socket ioctl priv_sock_ioctls;
 hal_server_domain_bypass(vendor_qms, vendor_hal_qms_qti)
 hal_attribute_service(vendor_hal_qms_qti, vendor_hal_qms_service)
 binder_call(vendor_hal_qms_qti_server, servicemanager)
@@ -90,7 +91,7 @@ hal_client_domain(vendor_qms,hal_wifi_hostapd)
 hal_client_domain(vendor_qms,hal_wifi_supplicant)
 hal_client_domain(vendor_qms, hal_bluetooth)
 
-add_service(vendor_qms, vendor_qhdcservice)
+hal_attribute_service(vendor_hal_qms_qti, vendor_qhdcservice)
 net_domain(vendor_qms)
 
 #glink
@@ -170,6 +171,9 @@ qesdk_access(vendor_qms)
 allow vendor_qms vendor_qms_vndr_data_file:dir create_dir_perms;
 allow vendor_qms vendor_qms_vndr_data_file:file create_file_perms;
 get_prop(vendor_qms, vendor_qms_prop)
+
+allow vendor_qms vendor_sysfs_battery_supply:dir search;
+allow vendor_qms vendor_sysfs_battery_supply:file { open read };
 
 # collect tombstone
 crash_dump_fallback(vendor_qms);
