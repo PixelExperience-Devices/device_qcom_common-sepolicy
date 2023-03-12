@@ -472,6 +472,9 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
 
+# vendor_sysfs_devfreq
+/sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:vendor_sysfs_devfreq:s0
+
 #vendor_sysfs_data
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:vendor_sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:vendor_sysfs_data:s0
@@ -535,17 +538,51 @@
 /sys/class/lcd_bias/secure_mode                                     u:object_r:vendor_sysfs_graphics:s0
 /sys/class/leds/wled/secure_mode                                    u:object_r:vendor_sysfs_graphics:s0
 
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:vendor_sysfs_graphics:s0
+/sys/module/drm/parameters/vblankoffdelay                           u:object_r:vendor_sysfs_graphics:s0
+/sys/module/msm_drm/parameters/dsi_display([0-1])                   u:object_r:vendor_sysfs_disp_boot_param:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:vendor_sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-f0-9]/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/caps           u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap            u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/caps                      u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cci/[a-f0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:vendor_sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:vendor_sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/auto_hibern8           u:object_r:vendor_sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:vendor_sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/host0/target0:0:0/0:0:0:[0-9]+/scsi_generic(/.*)?     u:object_r:vendor_sysfs_scsi_target:s0
+
+# VM Neuron block device mapping node
+/sys/devices/platform/soc/soc:qcom,svm_neuron_block/soc:qcom,svm_neuron_block:application/blk_name  u:object_r:vendor_sysfs_svm_neuron:s0
 
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_vendor_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:vendor_hal_neuralnetworks_data_file:s0
+
+# Moved to target specfic folder so removing this from common file
+#/sys/devices(/platform)?/soc/[a-f0-9\.:]+,[a-f0-9\-\_]+/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/perfcounter u:object_r:vendor_sysfs_kgsl_shell:s0
+/sys/devices/platform/soc/3d00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
 
 /sys/devices/soc/[a-f0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:vendor_sysfs_usb_supply:s0
 
@@ -595,6 +632,9 @@
 /(vendor|system/vendor)/bin/init\.kernel\.post_boot\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.qcv\.sh          u:object_r:vendor_qti_init_shell_exec:s0
 
+#Limits sysfs node
+/sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
+
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 /(vendor|system/vendor)/bin/system_dlkm_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 
@@ -602,6 +642,9 @@
 
 # Devcoredump framework
 /sys/devices/virtual/devcoredump/devcd[0-9]+/data       u:object_r:vendor_sysfs_devcd:s0
+
+# Microdump collector parameters
+/sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
 
 # CHRE
 /vendor/bin/hw/android\.hardware\.contexthub-service\.qmi                             u:object_r:hal_contexthub_default_exec:s0
