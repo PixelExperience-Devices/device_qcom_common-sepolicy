@@ -1,4 +1,4 @@
-COMMON_SEPOLICY_PATH := device/qcom/common/sepolicy
+COMMON_SEPOLICY_PATH := device/qcom/common-sepolicy/sepolicy_vndr-legacy
 
 ifeq ($(TARGET_SEPOLICY_DIR),)
     TARGET_SEPOLICY_DIR := $(TARGET_BOARD_PLATFORM)
