@@ -70,3 +70,6 @@ hal_client_domain(system_server, vendor_hal_wifilearner);
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)
+
+#allow system server to get vendor_audio_prop
+get_prop(system_server, vendor_audio_prop)
