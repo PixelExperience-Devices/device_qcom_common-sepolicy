@@ -278,3 +278,6 @@
 
 #wificfr daemon
 /(vendor|system/vendor)/bin/wificfrtool    u:object_r:wificfrsvc_exec:s0
+
+# Early init
+/(vendor|system/vendor)/bin/init\.qti\.early_init\.sh          u:object_r:vendor_qti_init_shell_exec:s0
