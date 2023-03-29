@@ -24,12 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_dpmqmi_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_iop_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_pasrmanager_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_pasrmanager_memory_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_wifidisplayhalservice_hwservice , hwservice_manager_type, protected_hwservice;
+type vendor_agm_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_alarm_qti_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_vpp_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_qconfig_hwservice , hwservice_manager_type, protected_hwservice;
