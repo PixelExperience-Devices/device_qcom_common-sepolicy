@@ -66,6 +66,9 @@ hal_client_domain(vendor_hal_gnss_qti, hal_health)
 # allows Gnss HAL to access ssgtzd socket
 unix_socket_connect(vendor_hal_gnss_qti, vendor_ssgtzd, vendor_ssgtzd)
 
+# read boot status
+get_prop(vendor_hal_gnss_qti, boot_status_prop)
+
 #Allow Gnss HAL to access ril socket
 allow vendor_hal_gnss_qti vendor_rild_socket:dir search;
 unix_socket_connect(vendor_hal_gnss_qti, vendor_rild, rild)
