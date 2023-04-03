@@ -35,6 +35,7 @@ allow hal_wifi_default vendor_location_socket:dir rw_dir_perms;
 allow hal_wifi_default vendor_location_socket: {sock_file lnk_file } create_file_perms;
 allow hal_wifi_default vendor_location:unix_dgram_socket sendto;
 allow hal_wifi_default vendor_location_lowi_server:unix_dgram_socket sendto;
+allow hal_wifi_default vendor_location_xtwifi_client:unix_dgram_socket sendto;
 
 # Hal_wifi doesnt need to communicate with SLIM. Denial can be ignored
 dontaudit hal_wifi_default vendor_location_slim_daemon:unix_dgram_socket sendto;
