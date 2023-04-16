@@ -88,3 +88,6 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/scs
 #vendor_sysfs_ssr nodes
 genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc0/name  u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8300000.remoteproc-cdsp/remoteproc/remoteproc1/name  u:object_r:vendor_sysfs_ssr:s0
+
+#hdmi
+genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-002b/get_hpd_stat u:object_r:vendor_sysfs_hdmi:s0
