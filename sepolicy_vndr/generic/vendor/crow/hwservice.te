@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,29 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-# CTS test case  CtsSecurityHostTestCases#testNoBugreportDenials
-# tries to check the if there are any denials from
-# dumpstate. As per the b/131578979 discussion
-# adding dontaudit for now.
-
-allow dumpstate adsprpcd_file:dir getattr;
-allow dumpstate bt_firmware_file:dir getattr;
-allow dumpstate bt_firmware_file:filesystem getattr;
-allow dumpstate firmware_file:dir getattr;
-allow dumpstate firmware_file:filesystem getattr;
-allow dumpstate vendor_vm_system_file:dir getattr;
-allow dumpstate vendor_vm_system_file:filesystem getattr;
-dontaudit dumpstate sysfs:file *;
-allow dumpstate debugfs_mmc:dir search;
-
-# Signal native process to dump its stack 
-allow dumpstate vendor_hal_neuralnetworks_default:process signal;
-
-binder_call(dumpstate, hal_light_default)
-binder_call(dumpstate, hal_power_default)
-binder_call(dumpstate, hal_dumpstate_default)
-binder_call(dumpstate, vendor_qms)
-binder_call(dumpstate, hal_bluetooth_default)
-binder_call(dumpstate, vendor_ims_dcservice)
+type vendor_hal_display_demura_hwservice, hwservice_manager_type, protected_hwservice;
