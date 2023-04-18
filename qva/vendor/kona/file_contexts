@@ -127,3 +127,6 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+#camera
+/dev/msm_aac_in  u:object_r:vendor_media_aac_device:s0
