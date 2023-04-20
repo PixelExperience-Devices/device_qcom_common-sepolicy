@@ -195,3 +195,7 @@ unix_socket_connect(vendor_qvrd_vndr, logdr, logd)
 
 #suppressing the error messages
 dontaudit vendor_qvrd_vndr vendor_xdsp_device:chr_file r_file_perms;
+
+#tsf node permission
+allow vendor_qvrd_vndr sysfs_net:dir r_dir_perms;
+allow vendor_qvrd_vndr sysfs_net:file r_file_perms;

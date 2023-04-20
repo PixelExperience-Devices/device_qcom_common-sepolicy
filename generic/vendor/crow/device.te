@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-#for vendor_qti_init_shell to configfs permission
-allow vendor_qti_init_shell configfs:dir { create w_dir_perms };
-allow vendor_qti_init_shell configfs:file { create };
-allow vendor_qti_init_shell configfs:lnk_file { create };
-
-#for vendor_qti_init_shell to vendor_sysfs_sd permission
-allow vendor_qti_init_shell vendor_sysfs_sd:file { write };
-
-#for vendor_qti_init userdebug
-userdebug_or_eng(`
-    allow vendor_qti_init_shell vendor_qti_init_shell:lockdown { integrity };
-')
-
-#for vendor_qti_init to ctl_stop_prop permission
-set_prop(vendor_qti_init_shell,ctl_stop_prop);
+type vendor_logdump_partition, dev_type;
+type vendor_mba_debug_dev, dev_type;
+type vendor_dip_device, dev_type;
+type vendor_rawdump_block_device, dev_type;
+type vendor_virtio_chr_device, dev_type;
+type vendor_gunyah_chr_device, dev_type;
