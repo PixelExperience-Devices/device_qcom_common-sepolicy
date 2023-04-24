@@ -78,6 +78,7 @@ vendor.ese.strongbox                         u:object_r:vendor_ese_strongbox_pro
 
 #Disable SPU property
 vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:s0
+vendor.gatekeeper.is_security_level_spu      u:object_r:vendor_disable_spu_prop:s0
 
 #boot mode property
 vendor.sys.boot_mode                         u:object_r:vendor_boot_mode_prop:s0
