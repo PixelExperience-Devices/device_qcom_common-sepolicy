@@ -133,3 +133,6 @@
 /dev/msm_audio_cal  u:object_r:vendor_media_aac_device:s0
 /dev/msm_rtac  u:object_r:vendor_media_aac_device:s0
 /dev/msm_wmapro  u:object_r:vendor_media_wmapro_device:s0
+
+#msm_lsm cdev
+/dev/msm_lsm_cdev     u:object_r:vendor_msm_lsm_cdev_device:s0
