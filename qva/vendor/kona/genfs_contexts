@@ -113,4 +113,4 @@ genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remotep
 genfscon sysfs /devices/platform/soc/8300000.remoteproc-cdsp/remoteproc/remoteproc1/name  u:object_r:vendor_sysfs_ssr:s0
 
 #hdmi
-genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-002b/get_hpd_stat u:object_r:vendor_sysfs_hdmi:s0
+genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/984000.i2c/i2c-0/0-002b/get_hpd_stat u:object_r:vendor_sysfs_hdmi:s0
