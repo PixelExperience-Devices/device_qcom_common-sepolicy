@@ -1,8 +1,6 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#define cec device
-type vendor_cec_device, dev_type;
+# for hal_audio_default to device permission
+allow hal_audio_default vendor_media_aac_device:chr_file rw_file_perms;
 
-#define HDMI-IN device
-type vendor_hdmi_bdg_irq_device, dev_type;
