@@ -193,5 +193,10 @@ genfscon sysfs /module/rmnet_sch/parameters u:object_r:vendor_sysfs_rmnet:s0
 genfscon sysfs /module/rmnet_shs/parameters u:object_r:vendor_sysfs_rmnet:s0
 genfscon sysfs /module/rmnet_wlan/parameters u:object_r:vendor_sysfs_rmnet:s0
 
+genfscon sysfs /kernel/camera/num_ifes u:object_r:vendor_sysfs_camera:s0
+genfscon sysfs /kernel/camera/num_ife_lites u:object_r:vendor_sysfs_camera:s0
+genfscon sysfs /kernel/camera/num_sfes u:object_r:vendor_sysfs_camera:s0
+genfscon sysfs /kernel/camera/num_sbi u:object_r:vendor_sysfs_camera:s0
+
 genfscon sysfs /kernel/qts/primary/trusted_touch_enable u:object_r:vendor_sysfs_trusted_touch_enable:s0
 genfscon sysfs /kernel/qts/secondary/trusted_touch_enable u:object_r:vendor_sysfs_trusted_touch_enable:s0

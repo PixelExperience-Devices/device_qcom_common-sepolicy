@@ -92,6 +92,9 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
 
+# dev nodes
+/dev/hdmi_bdg_irq_handler                                           u:object_r:vendor_hdmi_bdg_irq_device:s0
+
 #Display nodes
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
@@ -124,3 +127,8 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+#camera
+/dev/msm_aac_in  u:object_r:vendor_media_aac_device:s0
+/dev/msm_audio_cal  u:object_r:vendor_media_aac_device:s0
+/dev/msm_rtac  u:object_r:vendor_media_aac_device:s0
