@@ -103,31 +103,6 @@
 # mmc device type
 /sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc0/mmc0:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 
-#VM Specific
-/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/caps           u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:vendor_sysfs_graphics:s0
-
-# VM Neuron block device mapping node
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/perfcounter u:object_r:vendor_sysfs_kgsl_shell:s0
-/sys/devices/platform/soc/3d00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
-
-#Limits sysfs node
-/sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
-
-# Microdump collector parameters
-/sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
-
 #camera
 /dev/msm_aac_in  u:object_r:vendor_media_aac_device:s0
 /dev/msm_audio_cal  u:object_r:vendor_media_aac_device:s0
