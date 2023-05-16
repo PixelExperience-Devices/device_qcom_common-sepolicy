@@ -114,6 +114,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:vendor_sysfs_graphics:s0
 
+/sys/bus/i2c/devices/i2c-0/0-002b/get_hpd_stat                      u:object_r:vendor_sysfs_hdmi:s0
 # VM Neuron block device mapping node
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
@@ -127,3 +128,12 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+#camera
+/dev/msm_aac_in  u:object_r:vendor_media_aac_device:s0
+/dev/msm_audio_cal  u:object_r:vendor_media_aac_device:s0
+/dev/msm_rtac  u:object_r:vendor_media_aac_device:s0
+/dev/msm_wmapro  u:object_r:vendor_media_wmapro_device:s0
+
+#msm_lsm cdev
+/dev/msm_lsm_cdev     u:object_r:vendor_msm_lsm_cdev_device:s0

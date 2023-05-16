@@ -102,6 +102,9 @@ qtr_sdk_use(vendor_qms)
 allow vendor_qms vendor_qms_vndr_data_file:dir create_dir_perms;
 allow vendor_qms vendor_qms_vndr_data_file:file create_file_perms;
 
+userdebug_or_eng(`
+unix_socket_connect(vendor_qms, logdr, logd);
+')
 # QMS child process
 allow vendor_qms self:process setcurrent;
 allow vendor_qms {
