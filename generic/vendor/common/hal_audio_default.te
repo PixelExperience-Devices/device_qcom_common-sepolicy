@@ -26,11 +26,13 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 userdebug_or_eng(`
   allow hal_audio vendor_diag_device:chr_file rw_file_perms;
+#Allow for pd_locater service access
+  get_prop(hal_audio, vendor_pd_locater_dbg_prop)
   set_prop(hal_audio, vendor_audio_prop)
 ')
 

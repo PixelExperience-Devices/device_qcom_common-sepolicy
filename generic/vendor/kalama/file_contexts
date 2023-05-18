@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 ###################################
 # Dev block nodes
 
@@ -248,7 +253,7 @@
 /sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
 
 # mmc device type
-/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc0/mmc0:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 
 /vendor/bin/hw/vendor\.qti\.hardware\.display\.demura@1\.0-service u:object_r:hal_display_demura_default_exec:s0
 
@@ -306,5 +311,10 @@
 #Limits sysfs node
 /sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
 
+# AKS gamepad HAL service
+/vendor/bin/hw/vendor\.aks\.gamepad@1\.0-service      u:object_r:hal_gamepad_default_exec:s0
+/dev/aks_input                       u:object_r:vendor_aks_chr_device:s0
+
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+/vendor/bin/usbudev     u:object_r:vendor_usbudev_qti_exec:s0
