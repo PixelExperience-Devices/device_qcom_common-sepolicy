@@ -66,3 +66,4 @@ type vendor_hal_sxrd_service,            vendor_service,protected_service,servic
 type vendor_hal_dataconnection_service,  vendor_service, protected_service, service_manager_type;
 type vendor_hal_qms_service,             vendor_service, protected_service, service_manager_type;
 type vendor_hal_bttpi_service,           vendor_service, protected_service, service_manager_type;
+type vendor_hal_qspa_service,           vendor_service, protected_service, service_manager_type;
