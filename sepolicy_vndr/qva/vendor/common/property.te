@@ -119,3 +119,5 @@ vendor_internal_prop(vendor_qesdk_ready_prop)
 
 #qms property
 vendor_internal_prop(vendor_qms_prop)
+
+vendor_internal_prop(vendor_nfc_prop)
