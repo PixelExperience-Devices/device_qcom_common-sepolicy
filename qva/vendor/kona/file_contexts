@@ -120,3 +120,9 @@
 
 /dev/msm_evrc_in  u:object_r:vendor_media_evrc_device:s0
 /dev/msm_qcelp_in  u:object_r:vendor_media_qcelp_device:s0
+
+#proc
+/proc/sys/vm/page-cluster u:object_r:proc_page_cluster:s0
+
+#tee
+/dev/0:0:0:[0-5]  u:object_r:vendor_dev_tee:s0
