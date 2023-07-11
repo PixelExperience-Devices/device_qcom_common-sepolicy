@@ -314,3 +314,5 @@
 
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/sku_version       u:object_r:vendor_sysfs_sku:s0
