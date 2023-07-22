@@ -69,3 +69,6 @@ allow hal_audio sysfs_audio:dir r_dir_perms;
 allow hal_audio_default sysfs_soc:dir r_dir_perms;
 
 dontaudit hal_audio_default default_prop:file read;
+
+#Allow callbacks into QC2 audio service
+hal_client_domain(hal_audio_default, hal_codec2)
