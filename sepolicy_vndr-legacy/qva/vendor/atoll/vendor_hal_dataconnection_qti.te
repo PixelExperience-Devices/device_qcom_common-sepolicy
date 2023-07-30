@@ -30,3 +30,4 @@
 
 allow vendor_hal_dataconnection_qti_client vendor_hal_dataconnection_service:service_manager find;
 add_service(vendor_hal_dataconnection_qti_server, vendor_hal_dataconnection_service)
+
