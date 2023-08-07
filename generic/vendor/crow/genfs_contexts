@@ -303,6 +303,7 @@ genfscon sysfs /devices/platform/soc/9f700000.remoteproc-wpss/wakeup u:object_r:
 genfscon sysfs /devices/platform/soc/17110040.qcom,wcn6750/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:gpio_key/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_0_geni_se/884000.i2c/i2c-0/0-0028/wakeup u:object_r:sysfs_wakeup:s0
 
 # vendor_sysfs_devfreq
 genfscon sysfs /module/msm_drm/parameters/dsi_display0  u:object_r:vendor_sysfs_disp_boot_param:s0
