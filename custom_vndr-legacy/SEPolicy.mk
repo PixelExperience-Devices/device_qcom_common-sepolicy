@@ -36,3 +36,5 @@ ifneq ($(AOSPA_BUILD),)
     SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
         $(COMMON_SEPOLICY_PATH)/aospa/private
 endif
+
+include device/custom/sepolicy/qcom/sepolicy.mk
