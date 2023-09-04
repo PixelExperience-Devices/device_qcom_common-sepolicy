@@ -183,3 +183,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:vendor_hal_fingerprint_fpc_exec:s0
 
 /sys/devices/platform/soc/1b46018.qfprom/qfprom0/nvmem                  u:object_r:vendor_sysfs_qfprom:s0
+
+# Audio
+/dev/msm_audio_cal  u:object_r:vendor_audio_cal_device:s0
