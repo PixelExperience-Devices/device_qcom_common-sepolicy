@@ -186,3 +186,5 @@
 
 # Audio
 /dev/msm_audio_cal  u:object_r:vendor_audio_cal_device:s0
+#msm_lsm cdev
+/dev/msm_lsm_cdev     u:object_r:vendor_msm_lsm_cdev_device:s0
