@@ -189,3 +189,4 @@
 #msm_lsm cdev
 /dev/msm_lsm_cdev     u:object_r:vendor_msm_lsm_cdev_device:s0
 /dev/msm_rtac  u:object_r:vendor_msm_rtac_device:s0
+/dev/msm_aac_in  u:object_r:vendor_media_aac_device:s0
