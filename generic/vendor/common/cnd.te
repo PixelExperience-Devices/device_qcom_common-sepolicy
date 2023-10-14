@@ -75,10 +75,6 @@ qnicorn_socket(vendor_cnd)
 allow vendor_cnd vendor_qnicornd:fd use;
 allow vendor_cnd vendor_qnicornd:udp_socket { read write };
 
-nicm_socket(vendor_cnd)
-allow vendor_cnd vendor_nicmd:fd use;
-allow vendor_cnd vendor_nicmd:udp_socket { read write };
-
 # To register vendor_cnd to hwbinder
 hal_server_domain_bypass(vendor_cnd, vendor_hal_datafactory_qti)
 
