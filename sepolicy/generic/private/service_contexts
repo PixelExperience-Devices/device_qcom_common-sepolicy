@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 cneservice                                           u:object_r:vendor_cne_service:s0
 vendor.imsdcservice                                  u:object_r:vendor_imsdc_service:s0
 com.qualcomm.qti.ustaservice.USTAServiceImpl         u:object_r:vendor_usta_app_service:s0
@@ -47,6 +52,10 @@ vendor.vpsservice                              u:object_r:vendor_vps_service:s0
 vendor.qspmsvc                                 u:object_r:vendor_qspmsvc_service:s0
 nfc_settings                                   u:object_r:nfc_service:s0
 nfc.st_ext                                     u:object_r:nfc_service:s0
+vendor.qti.gnss.ILocAidlGnss/default           u:object_r:hal_gnss_service:s0
 vendor.qvirtmgr                                u:object_r:vendor_qvirtmgr_service:s0
 vendor.qti.qesdsys.IQesdSys/default            u:object_r:vendor_qesdk_service:s0
 vendor.qti.hardware.radio.atcmdfwd.IAtCmdFwd/AtCmdFwdAidl u:object_r:radio_service:s0
+vendor.qti.qvirt.IVirtualizationService/default   u:object_r:vendor_hal_qvirt_service:s0
+vendor.virtual_keyboard                   u:object_r:vendor_virtual_keyboard_service:s0
+cross_device_service                      u:object_r:cross_device_service:s0

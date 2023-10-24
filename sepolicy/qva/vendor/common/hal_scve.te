@@ -1,3 +1,0 @@
-#  Access for DSP/QDSP device
-allow vendor_scve vendor_qdsp_device:chr_file rw_file_perms;
-allow vendor_scve vendor_dsp_device:chr_file rw_file_perms;

@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -30,8 +30,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-qesdk_app_access(untrusted_app_30);
-hal_client_domain(untrusted_app_30, vendor_hal_qspmhal)
+qesdk_app_access(untrusted_app_32);
+hal_client_domain(untrusted_app_32, vendor_hal_qspmhal)
 
 # allow app to be a client of DSP HAL
-hal_client_domain(untrusted_app_30, vendor_hal_dspmanager)
+hal_client_domain(untrusted_app_32, vendor_hal_dspmanager)
