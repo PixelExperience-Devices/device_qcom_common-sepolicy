@@ -54,8 +54,8 @@
 /dev/spdaemon_ssr                               u:object_r:spdaemon_ssr_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
-/dev/btpower                                    u:object_r:bt_device:s0
-/dev/btfmslim                                   u:object_r:bt_device:s0
+/dev/btfmslim                                   u:object_r:vendor_bt_device:s0
+/dev/btpower                                    u:object_r:vendor_bt_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
 /dev/sdsprpc-smd                                u:object_r:dsp_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
@@ -347,7 +347,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer@1\.0-service   u:object_r:hal_graphics_composer_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer-service   u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service u:object_r:hal_soter_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0

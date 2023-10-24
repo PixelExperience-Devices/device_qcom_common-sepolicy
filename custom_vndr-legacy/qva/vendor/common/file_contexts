@@ -1,0 +1,11 @@
+# QRTR
+/(vendor|system/vendor)/bin/qrtr-lookup u:object_r:vendor_qrtr_exec:s0
+
+# GNSS
+/(vendor|system/vendor)/bin/xtwifi-inet-agent	u:object_r:vendor_location_xtwifi_inetagent_exec:s0
+
+# QMS
+/(vendor|system/vendor)/bin/mutualex		u:object_r:vendor_qms_exec:s0
+
+# SSG QMI Gateway Daemon
+/(vendor|system/vendor)/bin/ssgqmigd64		u:object_r:vendor_ssgqmigd_exec:s0

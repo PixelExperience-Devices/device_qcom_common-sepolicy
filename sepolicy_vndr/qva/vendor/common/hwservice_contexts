@@ -24,10 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:vendor_wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.iop::IIop                                u:object_r:vendor_hal_iop_hwservice:s0
@@ -78,7 +74,6 @@ vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi
 vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory  u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:vendor_hal_wifilearner_hwservice:s0
 vendor.qti.qspmhal::IQspmhal                                 u:object_r:vendor_hal_qspmhal_hwservice:s0
-vendor.qti.qesdhal::IQesdhal                                 u:object_r:vendor_hal_qesdhal_hwservice:s0
 vendor.qti.hardware.secureprocessor.device::ISecureProcessor    u:object_r:vendor_hal_secureprocessor_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:vendor_hal_qseecom_hwservice:s0

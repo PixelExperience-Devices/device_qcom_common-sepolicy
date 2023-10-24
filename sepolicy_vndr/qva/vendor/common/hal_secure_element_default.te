@@ -73,3 +73,6 @@ allow hal_secure_element_default tee_device:chr_file rw_file_perms;
 
 # Allow secure-element HAL to interract with qcom,qseecom-ta
 allow hal_secure_element_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+
+# Allow secure-element HAL to interract with secure peripheral services
+unix_socket_connect(hal_secure_element_default, vendor_ssgtzd, vendor_ssgtzd)

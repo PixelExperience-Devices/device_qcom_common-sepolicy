@@ -46,6 +46,7 @@ unix_socket_connect(vendor_hal_imsrtp, logdr, logd);
 ')
 
 allow vendor_hal_imsrtp self:capability net_bind_service;
+allow vendor_hal_imsrtp vendor_qce_device:chr_file rw_file_perms;
 
 allow vendor_hal_imsrtp ion_device:chr_file r_file_perms;
 allow vendor_hal_imsrtp vendor_sysfs_data:file r_file_perms;

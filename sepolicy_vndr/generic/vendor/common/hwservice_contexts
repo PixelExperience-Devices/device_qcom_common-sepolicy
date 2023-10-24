@@ -33,6 +33,7 @@ vendor.qti.ims.callinfo::IService                               u:object_r:vendo
 vendor.qti.imsrtpservice::IRTPService                          u:object_r:vendor_hal_imsrtp_hwservice:s0
 vendor.qti.mstatservice::IMStatService                          u:object_r:vendor_hal_mstatservice_hwservice:s0
 vendor.qti.data.factory::IFactory                               u:object_r:vendor_hal_datafactory_hwservice:s0
+vendor.qti.ims.factor::IImsFactory                              u:object_r:vendor_hal_imsfactory_hwservice:s0
 vendor.qti.ims.factory::IImsFactory                             u:object_r:vendor_hal_imsfactory_hwservice:s0
 vendor.qti.hardware.data.connection::IDataConnection            u:object_r:vendor_hal_dataconnection_hwservice:s0
 vendor.qti.hardware.cacert::IService                            u:object_r:vendor_hal_cacert_hwservice:s0
@@ -56,7 +57,6 @@ vendor.qti.hardware.radio.uim_remote_client::IUimRemoteServiceClient u:object_r:
 vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.display.allocator::IQtiAllocator         u:object_r:hal_graphics_allocator_hwservice:s0
 vendor.qti.hardware.display.composer::IQtiComposer           u:object_r:hal_graphics_composer_hwservice:s0
-vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:vendor_hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:vendor_hal_qdutils_disp_hwservice:s0
 vendor.qti.hardware.trustedui::ITrustedUI                 u:object_r:vendor_hal_trustedui_hwservice:s0
 vendor.qti.hardware.trustedui::ITrustedInput              u:object_r:vendor_hal_trustedui_hwservice:s0
